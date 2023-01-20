@@ -1,0 +1,148 @@
+.containerMenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.leftContainerMenu {
+    width: 25%;
+}
+
+.rigthContainerMenu {
+    width: 25%;
+}
+
+.centerContainerMenu {
+    background-color: #BCEFFF;
+    position: relative;
+    border: 4px solid rgb(0, 0, 0);
+    border-radius: 80px;
+    width: 500px;
+    height: 680px;
+}
+
+.centerLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 55%;
+
+}
+
+.centerRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 142%;
+
+}
+
+.mcJr {
+    width: 100px;
+    margin-top: 130px;
+}
+
+.mcJrBtn {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 150px;
+    margin-top: 10px;
+    padding: 5px 10px 5px 10px;
+}
+
+.mcBtn {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 150px;
+    margin-top: 10px;
+    padding: 5px 10px 5px 10px;
+}
+
+.mcBig {
+    margin-left: 16px;
+    margin-top: 80px;
+    width: 150px;
+}
+
+
+.topMenu {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin-right: 2px;
+    height: 145px;
+    border-radius: 75px 75px 0 0;
+    background-color: #D9D9D9;
+}
+
+.topMenu img {
+    width: 270px;
+    margin-top: 10px;
+}
+
+.mcTitle {
+    width: 350px !important;
+}
+
+.bottomMenu {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-right: 2px;
+    height: 120px;
+    border-radius: 0 0 75px 75px;
+    background-color: #D9D9D9;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+
+}
+
+.bottomRight {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+}
+
+.finishOrder {
+    padding: 5px 10px 5px 10px;
+    margin-right: 50px;
+    margin-bottom: 10px;
+    background-color: #D7FFFA;
+    border: 2px solid #FBC9FF;
+    border-radius: 35px;
+}
+
+.total {
+    margin: 15px 0 0 35px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #B900A6;
+    -webkit-text-stroke: 1px #000000;
+
+}
+
+.resumen {
+    text-align: center;
+    margin: 12px 0 0 35px;
+    color: #5B00B7;
+    -webkit-text-stroke: 0.5px #000000;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: underline;
+
+}
