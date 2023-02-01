@@ -1,4 +1,4 @@
-.containerMenu {
+.containerMenus {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -13,6 +13,8 @@
     width: 25%;
 }
 
+
+
 .centerContainerMenu {
     background-color: #BCEFFF;
     position: relative;
@@ -22,13 +24,22 @@
     height: 680px;
 }
 
+.centerMenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 415px;
+}
+
 .centerLeft {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    width: 55%;
+    width: 50%;
+
 
 }
 
@@ -37,39 +48,38 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    width: 142%;
+    width: 50%;
 
-}
-
-.mcJr {
-    width: 100px;
-    margin-top: 130px;
-}
-
-.mcJrBtn {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 150px;
-    margin-top: 10px;
-    padding: 5px 10px 5px 10px;
 }
 
 .mcBtn {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    font-family: 'Century Gothic';
+    font-weight: bold;
     width: 150px;
     margin-top: 10px;
     padding: 5px 10px 5px 10px;
+    background-color: #FBC9FF;
+    cursor: pointer;
+
 }
 
 .mcBig {
-    margin-left: 16px;
-    margin-top: 80px;
     width: 150px;
 }
+
+.menuContainer {
+    margin: 0 20px;
+}
+
+.menuContainer:last-child img {
+    margin-top: 20px;
+    margin-left: 10px;
+    width: 130px;
+}
+
 
 
 .topMenu {
@@ -110,39 +120,48 @@
 
 }
 
+.bottomLeft,
 .bottomRight {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    flex-direction: row;
     align-items: center;
-    text-align: center;
-}
+    width: 50%;
 
-.finishOrder {
-    padding: 5px 10px 5px 10px;
-    margin-right: 50px;
-    margin-bottom: 10px;
-    background-color: #D7FFFA;
-    border: 2px solid #FBC9FF;
-    border-radius: 35px;
 }
 
 .total {
-    margin: 15px 0 0 35px;
     font-size: 30px;
+    font-family: 'Century Gothic';
     font-weight: bold;
     color: #B900A6;
     -webkit-text-stroke: 1px #000000;
 
 }
 
-.resumen {
+.vacio {
     text-align: center;
-    margin: 12px 0 0 35px;
+    font-family: 'Century Gothic';
     color: #5B00B7;
     -webkit-text-stroke: 0.5px #000000;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 17px;
     text-decoration: underline;
+    margin-left: 25px;
+
+}
+
+
+.resumen {
+    cursor: pointer;
+    text-align: center;
+    font-family: 'Century Gothic';
+    color: #5B00B7;
+    -webkit-text-stroke: 0.5px #000000;
+    font-weight: bold;
+    font-size: 17px;
+    text-decoration: underline;
+    margin-left: 35px;
+
 
 }
