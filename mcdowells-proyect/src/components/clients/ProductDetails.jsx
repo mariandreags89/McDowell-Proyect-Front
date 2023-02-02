@@ -20,7 +20,7 @@ function ProductDetails() {
         const getProduct = async () => {
             const response = await axios.get(`http://localhost:3001/api/products/${id}`);
             setProduct(response.data);
-            console.log(response.data);
+            console.log(context.cart)
         }
         getProduct();
     }, [])
@@ -43,7 +43,7 @@ function ProductDetails() {
                 } : item
             );
             context.setCart(setOneProd); //Estás limpiando el carrito que había previamente se actualiza con lo nuvo
-            console.log(setOneProd);
+            
         } else {
             /*Si no está lo que hacemos es otro array que le indicamos que tiene que meter todo
              lo que había previamente en el carrito con ...cart para después añadirle el nuevo 
@@ -58,11 +58,14 @@ function ProductDetails() {
 
         const setTotalPrice = context.totalCart.map((item) => {
             return (
-                {
+                {   
                     totalPrice: item.totalPrice + product.price,
-                    totalQuantity: item.totalQuantity+product.quantity
+                    totalQuantity: item.totalQuantity + 1 // si no existe no puede sumar campo q no hay en product.quantity, por eso sale NAN
+                                // como es una cantidad que no diferencia entre tipos de menu, sino total,sumamos de 1 en 1 cuando se llame 
+                                // a la funcion
                 })
         })
+        
         context.setTotalCart(setTotalPrice)//actualizamos el total
 
     }
