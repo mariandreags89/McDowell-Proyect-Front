@@ -1,15 +1,80 @@
-import React from 'react';
+import React, { useState } from 'react';
 import resumen from '../../assets/images/resumen.png'
 import pedido from '../../assets/images/resumen2.png'
 import '../../assets/clients/cart.css'
 import { useNavigate } from 'react-router-dom';
-//<img className='mcJr' src='https://cdn-icons-png.flaticon.com/512/1581/1581006.png' alt='NOT FOUND' />
+import { useCartContext } from '../../context/ShoppingCartContext';
+
 
 
 
 function Cart() {
-
     const navigate = useNavigate();
+    const context = useCartContext();
+    console.log(context.cart);
+
+
+
+    const addProduct = (id) => {
+
+        const isInCart = context.cart.find(item => item.id_product === id)
+
+        if (isInCart) {
+            const setOneProd = context.cart.map(item =>
+                item.id_product === isInCart.id_product ? {
+                    ...isInCart,
+                    quantity: isInCart.quantity + 1,
+                    total: isInCart.price * (isInCart.quantity + 1)
+                } : item
+            );
+            context.setCart(setOneProd);
+        }
+
+        const setTotalPrice = context.totalCart.map((item) => {
+            return (
+                {
+                    totalPrice: item.totalPrice + isInCart.price,
+                    totalQuantity: item.totalQuantity + 1
+                })
+        })
+        context.setTotalCart(setTotalPrice)
+
+    }
+
+    const deleteProduct = (id) => {
+        const isInCart = context.cart.find(item => item.id_product === id)
+
+        if (id.quantity === 1) {
+            if(isInCart.quantity === 0){
+                isInCart.quantity=0;
+            }else{
+            const setDeleteProd = context.cart.filter(item =>
+                item.id_product !== id);
+
+            context.cart(setDeleteProd);}
+
+        } else {
+
+            const setDeleteOne = context.cart.map(item =>
+                item.id_product === isInCart.id_product ? {
+                    ...isInCart,
+                    quantity: isInCart.quantity - 1,
+                    total: isInCart.price * (isInCart.quantity - 1)
+                } : item
+            );
+            context.setCart(setDeleteOne);
+        }
+        const setTotalPrice =()=> context.totalCart.map((item) => {
+            return (
+                {
+                    totalPrice: item.totalPrice - isInCart.price,
+                    totalQuantity: item.totalQuantity - 1
+                })
+        })
+        context.setTotalCart(setTotalPrice)
+
+    }
+
 
     return (
         <>
@@ -21,36 +86,28 @@ function Cart() {
                         <img className='pedido' src={pedido} alt='NOT FOUND' />
                     </div>
                     <div className='centerCart'>
-                        <div className='topCenterCart'>
+                        {context.cart.map((product) => //Hacemos el map sobre el context, lo que hay en el carrito y asi evitamos la llamada
 
-                            <p className='menuTitle'>Menú McDowell's Jr</p>
+                            <div className='topCenterCart' key={product.id_product}>
+                                <div>
+                                    <p className='menuTitle'>{product.name}</p>
+                                </div>
 
-                            <div className='topCenterCartDiv'>
-                                <img className='mcJrCart' src='https://cdn-icons-png.flaticon.com/512/7451/7451012.png' alt='NOT FOUND' />
-                                <button className='menos'>-</button>
-                                <div className='cantidad'></div>
-                                <button className='mas'>+</button>
-                                <div className='precioUd'></div>
-                                <div className='precioTotMen'></div>
-                            </div>
-                        </div>
-                        <div className='bottomCenterCart'>
+                                <div className='topCenterCartDiv'>
+                                    <img className='mcJrCart' src={product.image} alt='NOT FOUND' />
+                                    <button className='menos' onClick={()=>deleteProduct(product.id_product)} disabled={product.quantity === 0 ? true : false}>-</button>
+                                    <div className='cantidad'>{product.quantity}</div>
+                                    <button className='mas' onClick={() => addProduct(product.id_product)}>+</button>
+                                    <div className='precioUd'>{product.price}€</div>
+                                    <div className='precioTotMen'>{product.total}€</div>
+                                </div>
 
-                            <p className='menuTitle'>Menú McDowell's</p>
+                            </div>)}
 
-                            <div className='bottomCenterCartDiv'>
-                                <img className='mcCart' src='https://cdn-icons-png.flaticon.com/512/9425/9425772.png' alt='NOT FOUND' />
-                                <button className='menos'>-</button>
-                                <div className='cantidad'></div>
-                                <button className='mas'>+</button>
-                                <div className='precioUd'></div>
-                                <div className='precioTotMen'></div>
-                            </div>
-                        </div>
-                        <p className='totalCart'> TOTAL: { } € </p>
+                        <p className='totalCart'> TOTAL: {context.totalCart[0].totalPrice}€ </p>
                     </div>
                     <div className='bottomCart'>
-                        <button className='resumeCart' onClick={ ()=>navigate(`/menus`)}>
+                        <button className='resumeCart' onClick={() => navigate(`/menus`)}>
                             REANUDAR PEDIDO
                         </button>
                         <button className='finishCart'>
