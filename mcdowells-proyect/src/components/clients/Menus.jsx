@@ -38,9 +38,6 @@ function Menus() {
 
                             <div key={product.id_product} className='menuContainer'>
                                 <img className='mcBig' src={product.image} alt='NOT FOUND' />
-                                {/*
-                            Hay que tener en cuenta que hay que meter el id dinámico en ambos botones
-                             */}
                                 <button className='mcBtn' onClick={() => navigate(`/menus/${product.id_product}`)}>
                                     {product.name}
                                     <br />
@@ -54,7 +51,7 @@ function Menus() {
                     </div>
                     <div className='bottomMenu'>
                         <div className='bottomLeft' >
-                            {(context.totalCart[0].totalPrice<=0)? 
+                            {(context.totalCart[0].totalPrice<=0 )? 
                             <p className='vacio'>No hay nada en el carrito</p> : 
                             <p className='resumen' onClick={() => navigate(`/Cart`)}>Ver resumen del pedido</p>}
                         </div>

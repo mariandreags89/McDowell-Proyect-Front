@@ -43,7 +43,7 @@ function ProductDetails() {
                 } : item
             );
             context.setCart(setOneProd); //Estás limpiando el carrito que había previamente se actualiza con lo nuvo
-            console.log(setOneProd);
+
         } else {
             /*Si no está lo que hacemos es otro array que le indicamos que tiene que meter todo
              lo que había previamente en el carrito con ...cart para después añadirle el nuevo 
@@ -60,7 +60,7 @@ function ProductDetails() {
             return (
                 {
                     totalPrice: item.totalPrice + product.price,
-                    totalQuantity: item.totalQuantity+product.quantity
+                    totalQuantity: item.totalQuantity + 1
                 })
         })
         context.setTotalCart(setTotalPrice)//actualizamos el total

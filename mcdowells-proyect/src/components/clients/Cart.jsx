@@ -4,8 +4,6 @@ import pedido from '../../assets/images/resumen2.png'
 import '../../assets/clients/cart.css'
 import { useNavigate } from 'react-router-dom';
 import { useCartContext } from '../../context/ShoppingCartContext';
-import { useEffect } from 'react';
-import axios from 'axios';
 
 
 
@@ -13,41 +11,67 @@ import axios from 'axios';
 function Cart() {
     const navigate = useNavigate();
     const context = useCartContext();
-    const [products, setProducts] = useState([]);
+    console.log(context.cart);
 
-    useEffect(() => {
-        const getProducts = async () => {
-            const response = await axios.get(`http://localhost:3001/api/products/all-products`);
-            setProducts(response.data);
-        }
-        getProducts();
-    }, [])
 
-    const addProduct = () => {
 
-        const isInCart = context.cart.find(item => item.id_product === products.id_product)
+    const addProduct = (id) => {
+
+        const isInCart = context.cart.find(item => item.id_product === id)
 
         if (isInCart) {
-            const setOneProd = context.cart.map(item =>  //En este punto, si coincide isInCart es lo mismo que product
+            const setOneProd = context.cart.map(item =>
                 item.id_product === isInCart.id_product ? {
                     ...isInCart,
                     quantity: isInCart.quantity + 1,
                     total: isInCart.price * (isInCart.quantity + 1)
-                } : isInCart
+                } : item
             );
-            context.setCart(setOneProd); //Estás limpiando el carrito que había previamente se actualiza con lo nuvo
-            console.log(setOneProd);
+            context.setCart(setOneProd);
         }
 
         const setTotalPrice = context.totalCart.map((item) => {
             return (
                 {
-                    totalPrice: item.totalPrice + products.price,
-                    totalQuantity: products.totalQuantity
+                    totalPrice: item.totalPrice + isInCart.price,
+                    totalQuantity: item.totalQuantity + 1
                 })
         })
-        context.setTotalCart(setTotalPrice)//actualizamos el total
-        console.log(setTotalPrice);
+        context.setTotalCart(setTotalPrice)
+
+    }
+
+    const deleteProduct = (id) => {
+        const isInCart = context.cart.find(item => item.id_product === id)
+
+        if (id.quantity === 1) {
+            if(isInCart.quantity === 0){
+                isInCart.quantity=0;
+            }else{
+            const setDeleteProd = context.cart.filter(item =>
+                item.id_product !== id);
+
+            context.cart(setDeleteProd);}
+
+        } else {
+
+            const setDeleteOne = context.cart.map(item =>
+                item.id_product === isInCart.id_product ? {
+                    ...isInCart,
+                    quantity: isInCart.quantity - 1,
+                    total: isInCart.price * (isInCart.quantity - 1)
+                } : item
+            );
+            context.setCart(setDeleteOne);
+        }
+        const setTotalPrice =()=> context.totalCart.map((item) => {
+            return (
+                {
+                    totalPrice: item.totalPrice - isInCart.price,
+                    totalQuantity: item.totalQuantity - 1
+                })
+        })
+        context.setTotalCart(setTotalPrice)
 
     }
 
@@ -62,7 +86,8 @@ function Cart() {
                         <img className='pedido' src={pedido} alt='NOT FOUND' />
                     </div>
                     <div className='centerCart'>
-                        {products.map((product, index) => //pasar producto e índice
+                        {context.cart.map((product) => //Hacemos el map sobre el context, lo que hay en el carrito y asi evitamos la llamada
+
                             <div className='topCenterCart' key={product.id_product}>
                                 <div>
                                     <p className='menuTitle'>{product.name}</p>
@@ -70,11 +95,11 @@ function Cart() {
 
                                 <div className='topCenterCartDiv'>
                                     <img className='mcJrCart' src={product.image} alt='NOT FOUND' />
-                                    <button className='menos'>-</button>
-                                    <div className='cantidad'>{context.cart[index].quantity}</div>
+                                    <button className='menos' onClick={()=>deleteProduct(product.id_product)} disabled={product.quantity === 0 ? true : false}>-</button>
+                                    <div className='cantidad'>{product.quantity}</div>
                                     <button className='mas' onClick={() => addProduct(product.id_product)}>+</button>
                                     <div className='precioUd'>{product.price}€</div>
-                                    <div className='precioTotMen'>{product.price * context.cart[0].quantity}€</div>
+                                    <div className='precioTotMen'>{product.total}€</div>
                                 </div>
 
                             </div>)}
