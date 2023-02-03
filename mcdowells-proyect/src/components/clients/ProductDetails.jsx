@@ -43,7 +43,11 @@ function ProductDetails() {
                 } : item
             );
             context.setCart(setOneProd); //Estás limpiando el carrito que había previamente se actualiza con lo nuvo
+<<<<<<< HEAD
             
+=======
+
+>>>>>>> 0dbe6220d60ff0b3d1357fc56f781bb319ab5c6e
         } else {
             /*Si no está lo que hacemos es otro array que le indicamos que tiene que meter todo
              lo que había previamente en el carrito con ...cart para después añadirle el nuevo 
@@ -60,9 +64,13 @@ function ProductDetails() {
             return (
                 {   
                     totalPrice: item.totalPrice + product.price,
+<<<<<<< HEAD
                     totalQuantity: item.totalQuantity + 1 // si no existe no puede sumar campo q no hay en product.quantity, por eso sale NAN
                                 // como es una cantidad que no diferencia entre tipos de menu, sino total,sumamos de 1 en 1 cuando se llame 
                                 // a la funcion
+=======
+                    totalQuantity: item.totalQuantity + 1
+>>>>>>> 0dbe6220d60ff0b3d1357fc56f781bb319ab5c6e
                 })
         })
         
