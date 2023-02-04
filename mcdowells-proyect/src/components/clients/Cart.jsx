@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import resumen from '../../assets/images/resumen.png'
 import pedido from '../../assets/images/resumen2.png'
 import '../../assets/clients/cart.css'
@@ -197,7 +197,7 @@ function Cart() {
                         <button className='resumeCart' onClick={() => navigate(`/menus`)}>
                             REANUDAR PEDIDO
                         </button>
-                        <button className='finishCart'>
+                        <button className='finishCart' onClick={() => navigate(`/finishOrder`)}>
                             FINALIZAR PEDIDO
                         </button>
                     </div>
