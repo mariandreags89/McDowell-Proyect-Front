@@ -1,4 +1,4 @@
-.containerMenu {
+.containerMenus {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -28,8 +28,8 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: stretch;
-    width: 477px;
+    align-items: center;
+    width: 500px;
     height: 415px;
 }
 
@@ -52,26 +52,6 @@
 
 }
 
-.mcJr {
-    width: 115px;
-    height: 100px;
-    margin-top: 52px;
-}
-
-.mcJrBtn {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    font-family: 'Century Gothic';
-    font-weight: bold;
-    width: 150px;
-    margin-top: 10px;
-    padding: 5px 10px 5px 10px;
-    background-color: #FBC9FF;
-    cursor: pointer;
-
-}
-
 .mcBtn {
     display: flex;
     flex-wrap: wrap;
@@ -89,6 +69,17 @@
 .mcBig {
     width: 150px;
 }
+
+.menuContainer {
+    margin: 0 20px;
+}
+
+.menuContainer:last-child img {
+    margin-top: 20px;
+    margin-left: 10px;
+    width: 130px;
+}
+
 
 
 .topMenu {
@@ -128,7 +119,9 @@
     bottom: 0px;
 
 }
-.bottomLeft, .bottomRight {
+
+.bottomLeft,
+.bottomRight {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -146,6 +139,19 @@
 
 }
 
+.vacio {
+    text-align: center;
+    font-family: 'Century Gothic';
+    color: #5B00B7;
+    -webkit-text-stroke: 0.5px #000000;
+    font-weight: bold;
+    font-size: 17px;
+    text-decoration: underline;
+    margin-left: 25px;
+
+}
+
+
 .resumen {
     cursor: pointer;
     text-align: center;
@@ -153,7 +159,9 @@
     color: #5B00B7;
     -webkit-text-stroke: 0.5px #000000;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 17px;
     text-decoration: underline;
+    margin-left: 35px;
+
 
 }

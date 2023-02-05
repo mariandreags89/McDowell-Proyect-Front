@@ -46,7 +46,15 @@
     color: #B900A6;
     -webkit-text-stroke: 1px #000000;
     text-align: center;
-    margin-top: 20px;
+    margin-top:10px;
+}
+.menuPrice {
+    font-family: 'Century Gothic';
+    font-weight: bold;
+    font-size: 30px;
+    color: #B900A6;
+    -webkit-text-stroke: 1px #000000;
+    text-align: center;
 }
 
 .centerDetails {
@@ -55,10 +63,10 @@
     justify-content: center;
     align-items: center;
     width: 477px;
-    height: 330px;
+    height: 250px;
 }
 
-.detailsMcBig {
+.detailsMc {
     width: 190px;
     margin-left: 15px;
 
