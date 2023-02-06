@@ -11,6 +11,8 @@ function EmailPage() {
     const context = useCartContext();
     const image = 'https://cdn-icons-png.flaticon.com/512/1053/1053188.png?w=740&t=st=1675464717~exp=1675465317~hmac=123970fb6328e4fa8a9eb22784499c906aaddd8cf173382cf6cca075051fc494';
 
+   
+
     return (
         <>
             <div className="containerEmail">
@@ -21,7 +23,7 @@ function EmailPage() {
                         <img className='emailImg' src={email} alt='NOT FOUND' />
                     </div>
                     <div className='centerEmail' >
-                        <form className='centerEmail' >
+                        <form className='centerEmail'>
                             <label className='infoText' for="fname">
                                 A continuación introduzca un email válido para remitirle el ticket correspondiente a su pedido.
 
