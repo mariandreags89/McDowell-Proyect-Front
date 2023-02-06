@@ -13,19 +13,19 @@ function EmailPage() {
     const image = 'https://cdn-icons-png.flaticon.com/512/1053/1053188.png?w=740&t=st=1675464717~exp=1675465317~hmac=123970fb6328e4fa8a9eb22784499c906aaddd8cf173382cf6cca075051fc494';
 
     const [userEmail, setUserEmail] = useState()
-    const sendCart = async(e) => {
-        e.preventDefault() 
+    const sendCart = async (e) => {
+        e.preventDefault()
         let order = await context.cart
-        await order.push({ ...context.totalCart[0], email: userEmail})
-       //const response = await axios.post("http://localhost:3001/api/orders/create-order", order)
-       context.setCart([])
-       context.setTotalCart([{
-        totalPrice: 0,
-        totalQuantity: 0
-    }])
+        await order.push({ ...context.totalCart[0], email: userEmail })
+        //const response = await axios.post("http://localhost:3001/api/orders/create-order", order)
+        context.setCart([])
+        context.setTotalCart([{
+            totalPrice: 0,
+            totalQuantity: 0
+        }])
         console.log(order)
         navigate('/seeyousoon')
-    }  
+    }
 
     return (
         <>
