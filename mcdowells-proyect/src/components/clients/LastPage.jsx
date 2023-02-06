@@ -8,12 +8,13 @@ import { useNavigate } from 'react-router-dom';
 
 function LastPage() {
 
-    const navigate = useNavigate();
+
+    const navigate= useNavigate()
     function redireccionar() {
-        // Esta función lo que hace es que redirecciona a la home cuando pasa el tiempo establecido
-        // En este caso falta poner que se vacíe el conetxto cuando pase el tiempo, de tal forma que se
-        // pueda iniciar un nuevo pedido desde createContext.
-        setTimeout(()=>{navigate('/')}, 5000)
+        
+        setTimeout(()=>navigate('/'), 5000)
+        //Falta poner que cuando esto pase el context se reinicie y no quede nada.;
+
       }
    
     return (
