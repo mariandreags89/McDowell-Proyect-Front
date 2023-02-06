@@ -71,3 +71,20 @@
     background-color: #FBC9FF;
     cursor: pointer;
 }
+/*CSS LastPage component*/
+
+.vuelva{
+    width: 400px;
+    margin-top: 70px;
+    align-self: center;
+
+}
+.pronto{
+    width: 470px;
+    margin-top: 50px;
+    
+}
+.mcTitleLast{
+    margin-top: 35px !important;
+    width: 400px !important;
+}

@@ -7,6 +7,7 @@ import ProductDetails from './components/clients/ProductDetails';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ShoppingCartProvider } from './context/ShoppingCartContext';
 import EmailPage from './components/clients/EmailPage';
+import LastPage from './components/clients/LastPage';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route path='/menus/:id' element={<ProductDetails />} />
             <Route path='/cart' element={<Cart />} />
             <Route path='/finishorder' element={<EmailPage/>} />
+            <Route path='/seeyousoon' element={<LastPage/>}/>
           </Routes>
         </ShoppingCartProvider>
       </BrowserRouter>
