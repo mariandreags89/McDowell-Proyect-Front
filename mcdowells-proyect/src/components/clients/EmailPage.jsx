@@ -28,7 +28,7 @@ function EmailPage() {
                             </label>
                             <input className='email' type="text" id="emailOrder" name="clientemail" placeholder="Introduzca email" required>
                             </input>
-                            <input className='sendEmail' type="submit" value="ENVIAR" />
+                            <input className='sendEmail' type="submit" value="ENVIAR"  onClick={()=> navigate('/seeyousoon')} />
 
 
                         </form>
