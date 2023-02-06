@@ -17,6 +17,7 @@ function LastPage() {
         setTimeout(() =>  navigate('/') , 5000)
     }
 
+
     return (
         <>
             <div className="container" onLoad={() => redireccionar()}>

@@ -11,13 +11,13 @@ import { useCartContext } from '../../context/ShoppingCartContext';
 function Cart() {
     const navigate = useNavigate();
     const context = useCartContext();
-    console.log(context.cart);
+    
 
 
     const addProduct = (id) => {
 
-        const isInCart = context.cart.find(item => item.id_product === id)
-
+       const isInCart = context.cart.find(item => item.id_product === id)
+       
         if (isInCart) {
             const setOneProd = context.cart.map(item =>
                 item.id_product === isInCart.id_product ? {
@@ -114,7 +114,7 @@ function Cart() {
                 </div>
                 <div className='rigthContainerMenu'>
                 </div>
-            </div>
+    </div>  
         </>
     )
 }
