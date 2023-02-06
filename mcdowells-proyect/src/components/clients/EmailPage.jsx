@@ -14,17 +14,17 @@ function EmailPage() {
 
     const [userEmail, setUserEmail] = useState()
     const sendCart = async (e) => {
-        e.preventDefault()
-        let order = await context.cart
+        e.preventDefault() //Para que no se recargue la página al darle y continue el proceso
+        let order = await context.cart 
         await order.push({ ...context.totalCart[0], email: userEmail })
         //const response = await axios.post("http://localhost:3001/api/orders/create-order", order)
-        context.setCart([])
+        context.setCart([]) //Vaciamos el carrito
         context.setTotalCart([{
             totalPrice: 0,
             totalQuantity: 0
-        }])
-        console.log(order)
-        navigate('/seeyousoon')
+        }]) //Vaciamos el  total 
+        console.log(order) 
+        navigate('/seeyousoon') //Nos lleva al último componente
     }
 
     return (
@@ -42,11 +42,11 @@ function EmailPage() {
                                 A continuación introduzca un email válido para remitirle el ticket correspondiente a su pedido.
 
                             </label>
-                            <input className='email' type="text" id="emailOrder" name="clientemail" placeholder="Introduzca email" onChange={(e) => setUserEmail(e.target.value)}
-                                required />
+                            <input className='email' type="text" id="emailOrder" 
+                            name="clientemail" placeholder="Introduzca email" 
+                            onChange={(e) => setUserEmail(e.target.value)} required />
 
                             <input className='sendEmail' type="submit" value="ENVIAR" />
-
 
                         </form>
                     </div>
