@@ -18,7 +18,11 @@ function EmailPage() {
         let order = await context.cart
         await order.push({ ...context.totalCart[0], email: userEmail})
        //const response = await axios.post("http://localhost:3001/api/orders/create-order", order)
-       context.cart
+       context.setCart([])
+       context.setTotalCart([{
+        totalPrice: 0,
+        totalQuantity: 0
+    }])
         console.log(order)
         navigate('/seeyousoon')
     }  
