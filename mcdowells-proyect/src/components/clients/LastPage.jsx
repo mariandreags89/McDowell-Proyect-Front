@@ -8,11 +8,13 @@ import { useNavigate } from 'react-router-dom';
 
 function LastPage() {
 
+
     const navigate= useNavigate()
     function redireccionar() {
         
         setTimeout(()=>navigate('/'), 5000)
         //Falta poner que cuando esto pase el context se reinicie y no quede nada.;
+
       }
    
     return (
