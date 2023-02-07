@@ -40,8 +40,8 @@ function Cart() {
 
     }
 
-    const deleteProduct = (prod) => {
-        const isInCart = context.cart.find(item => item.id_product === prod)
+    const deleteProduct = (id) => {
+        const isInCart = context.cart.find(item => item.id_product === id)
 
         if (isInCart.quantity === 1) {
 
