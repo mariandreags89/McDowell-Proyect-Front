@@ -11,14 +11,13 @@ import { useCartContext } from '../../context/ShoppingCartContext';
 function Cart() {
     const navigate = useNavigate();
     const context = useCartContext();
-    console.log(context.cart);
-
+    
 
 
     const addProduct = (id) => {
 
-        const isInCart = context.cart.find(item => item.id_product === id)
-
+       const isInCart = context.cart.find(item => item.id_product === id)
+       
         if (isInCart) {
             const setOneProd = context.cart.map(item =>
                 item.id_product === isInCart.id_product ? {
@@ -44,15 +43,11 @@ function Cart() {
     const deleteProduct = (id) => {
         const isInCart = context.cart.find(item => item.id_product === id)
 
-        if (id.quantity === 1) {
-            if(isInCart.quantity === 0){
-                isInCart.quantity=0;
-            }else{
-            const setDeleteProd = context.cart.filter(item =>
-                item.id_product !== id);
+        if (isInCart.quantity === 1) {
 
-            context.cart(setDeleteProd);}
-
+            const setDeleteProd = context.cart.filter(item => isInCart.id_product !== item.id_product);         
+            context.setCart(setDeleteProd);
+    
         } else {
 
             const setDeleteOne = context.cart.map(item =>
@@ -64,7 +59,7 @@ function Cart() {
             );
             context.setCart(setDeleteOne);
         }
-        const setTotalPrice =()=> context.totalCart.map((item) => {
+        const setTotalPrice = () => context.totalCart.map((item) => {
             return (
                 {
                     totalPrice: item.totalPrice - isInCart.price,
@@ -95,7 +90,7 @@ function Cart() {
 
                                 <div className='topCenterCartDiv'>
                                     <img className='mcJrCart' src={product.image} alt='NOT FOUND' />
-                                    <button className='menos' onClick={()=>deleteProduct(product.id_product)} disabled={product.quantity === 0 ? true : false}>-</button>
+                                    <button className='menos' onClick={() => deleteProduct(product.id_product)} disabled={product.quantity === 0 ? true : false}>-</button>
                                     <div className='cantidad'>{product.quantity}</div>
                                     <button className='mas' onClick={() => addProduct(product.id_product)}>+</button>
                                     <div className='precioUd'>{product.price}€</div>
@@ -117,7 +112,7 @@ function Cart() {
                 </div>
                 <div className='rigthContainerMenu'>
                 </div>
-            </div>
+    </div>  
         </>
     )
 }

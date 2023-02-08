@@ -2,22 +2,25 @@ import '../../assets/clients/clientshome.css'
 import pronto from '../../assets/images/pronto.png'
 import mcTitle from '../../assets/images/title.png'
 import vuelva from '../../assets/images/vuelva.png'
-import React from 'react';
+import React, { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useCartContext } from '../../context/ShoppingCartContext';
 
 
 function LastPage() {
+    const context = useCartContext();
 
+    console.log(context.cart)
+    const navigate = useNavigate();
     function redireccionar() {
-        // Esta función lo que hace es que redirecciona a la home cuando pasa el tiempo establecido
-        // En este caso falta poner que se vacíe el conetxto cuando pase el tiempo, de tal forma que se
-        // pueda iniciar un nuevo pedido desde createContext.
-        setTimeout("location.href='http://localhost:3000/'", 5000)
-        //Falta poner que cuando esto pase el context se reinicie y no quede nada.;
-      }
-   
+
+        setTimeout(() =>  navigate('/') , 5000)
+    }
+
+
     return (
         <>
-            <div className="container" onLoad={()=>redireccionar()}>
+            <div className="container" onLoad={() => redireccionar()}>
                 <div className='leftContainer'></div>
                 <div className="centerContainer">
                     <div className='topDiv'>
