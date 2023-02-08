@@ -13,17 +13,20 @@ function EmailPage() {
     const image = 'https://cdn-icons-png.flaticon.com/512/1053/1053188.png?w=740&t=st=1675464717~exp=1675465317~hmac=123970fb6328e4fa8a9eb22784499c906aaddd8cf173382cf6cca075051fc494';
 
     const [userEmail, setUserEmail] = useState()
+
     const sendCart = async (e) => {
-        e.preventDefault() //Para que no se recargue la página al darle y continue el proceso
-        let order = await context.cart 
-        await order.push({ ...context.totalCart[0], email: userEmail })
-        //const response = await axios.post("http://localhost:3001/api/orders/create-order", order)
+        e.preventDefault()
+        let order = await context.cart
+        let mail = { email: userEmail }
+
+        await axios.post("http://localhost:3001/api/orders/create-order", mail)
+        await axios.post("http://localhost:3001/api/orders/create-product-order", order)
         context.setCart([]) //Vaciamos el carrito
         context.setTotalCart([{
             totalPrice: 0,
             totalQuantity: 0
         }]) //Vaciamos el  total 
-        console.log(order) 
+        console.log(order)
         navigate('/seeyousoon') //Nos lleva al último componente
     }
 
@@ -42,9 +45,9 @@ function EmailPage() {
                                 A continuación introduzca un email válido para remitirle el ticket correspondiente a su pedido.
 
                             </label>
-                            <input className='email' type="text" id="emailOrder" 
-                            name="clientemail" placeholder="Introduzca email" 
-                            onChange={(e) => setUserEmail(e.target.value)} required />
+                            <input className='email' type="text" id="emailOrder"
+                                name="clientemail" placeholder="Introduzca email"
+                                onChange={(e) => setUserEmail(e.target.value)} required />
 
                             <input className='sendEmail' type="submit" value="ENVIAR" />
 
