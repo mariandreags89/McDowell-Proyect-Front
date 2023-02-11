@@ -1,8 +1,8 @@
 import '../../assets/clients/clientshome.css'
 import pronto from '../../assets/images/pronto.png'
-import mcTitle from '../../assets/images/title.png'
+import mcTitleLast from '../../assets/images/title.png'
 import vuelva from '../../assets/images/vuelva.png'
-import React, { useContext } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCartContext } from '../../context/ShoppingCartContext';
 
@@ -14,7 +14,7 @@ function LastPage() {
     const navigate = useNavigate();
     function redireccionar() {
 
-        setTimeout(() =>  navigate('/') , 5000)
+        setTimeout(() => navigate('/'), 5000)
     }
 
 
@@ -24,7 +24,7 @@ function LastPage() {
                 <div className='leftContainer'></div>
                 <div className="centerContainer">
                     <div className='topDiv'>
-                        <img className='mcTitleLast' src={mcTitle} alt='NOT FOUND' />
+                        <img className='mcTitleLast' src={mcTitleLast} alt='NOT FOUND' />
                     </div>
                     <img className='vuelva' src={vuelva} alt='NOT FOUND' />
                     <img className='pronto' src={pronto} alt='NOT FOUND' />
