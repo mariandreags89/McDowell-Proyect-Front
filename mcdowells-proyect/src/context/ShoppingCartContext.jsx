@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState } from "react";
 
-export const CartContext = createContext();//Creamos el contexto de la aplicación para trasnmitirlo a los componentes
+export const CartContext = createContext();//Creamos el contexto de la aplicación para trasmitirlo a los componentes
 
 export const ShoppingCartProvider = ({ children }) => {
 
