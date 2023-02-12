@@ -31,7 +31,7 @@ function Menus() {
                 <div className='leftContainerMenu'></div>
                 <div className="centerContainerMenu">
                     <div className='topMenu'>
-                        <img className='mcTitle' src={mcTitle} alt='NOT FOUND' />
+                        <img className='mcTitleMenu' src={mcTitle} alt='NOT FOUND' />
                     </div>
                     <div className='centerMenu'>
                         {products.map((product) =>
@@ -53,7 +53,7 @@ function Menus() {
                         <div className='bottomLeft' >
                             {(context.totalCart[0].totalPrice<=0 )? 
                             <p className='vacio'>No hay nada en el carrito</p> : 
-                            <p className='resumen' onClick={() => navigate(`/Cart`)}>Ver resumen del pedido</p>}
+                            <p className='resumen' onClick={() => navigate(`/cart`)}>Ver resumen del pedido</p>}
                         </div>
                         <div className='bottomRight' >
                             <p className='total' >TOTAL: {context.totalCart[0].totalPrice}€</p>
