@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ShoppingCartProvider } from './context/ShoppingCartContext';
 import EmailPage from './components/clients/EmailPage';
 import LastPage from './components/clients/LastPage';
+import PageQuestion from './components/clients/PageQuestion';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route path='/menus' element={<Menus />} />
             <Route path='/menus/:id' element={<ProductDetails />} />
             <Route path='/cart' element={<Cart />} />
+            <Route path='/register-or-continue' element={<PageQuestion/>} />
             <Route path='/finishorder' element={<EmailPage/>} />
             <Route path='/seeyousoon' element={<LastPage/>}/>
           </Routes>

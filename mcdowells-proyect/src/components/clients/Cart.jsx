@@ -105,7 +105,7 @@ function Cart() {
                         <button className='resumeCart' onClick={() => navigate(`/menus`)}>
                             REANUDAR PEDIDO
                         </button>
-                        <button className='finishCart' onClick={() => navigate(`/finishOrder`)}>
+                        <button className='finishCart' onClick={() => navigate(`/register-or-continue`)}>
                             FINALIZAR PEDIDO
                         </button>
                     </div>
