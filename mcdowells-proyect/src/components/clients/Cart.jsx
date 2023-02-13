@@ -78,7 +78,7 @@ function Cart() {
                 <div className="centerContainerCart">
                     <div className='topCart'>
                         <img className='resumenimg' src={resumen} alt='NOT FOUND' />
-                        <img className='pedido' src={pedido} alt='NOT FOUND' />
+                        <img className='pedidoimg' src={pedido} alt='NOT FOUND' />
                     </div>
                     <div className='centerCart'>
                         {context.cart.map((product) => //Hacemos el map sobre el context, lo que hay en el carrito y asi evitamos la llamada

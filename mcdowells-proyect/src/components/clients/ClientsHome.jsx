@@ -15,10 +15,12 @@ function ClientsHome() {
                 <div className='leftContainer'></div>
                 <div className="centerContainer">
                     <div className='topDiv'>
-                        <img src={welcome} alt=" NOT FOUND" />
+                        <img className= 'welcome' src={welcome} alt=" NOT FOUND" />
                         <img className='mcTitle' src={mcTitle} alt='NOT FOUND' />
                     </div>
+                    <div className='centerDiv'>
                     <img className='logo' src={logo} alt='NOT FOUND' />
+                    </div>
                     <div className='bottomDiv'>
                         <button className='start' onClick={() => navigate(`/menus`)}>EMPEZAR PEDIDO</button>
                     </div>
