@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ShoppingCartProvider } from './context/ShoppingCartContext';
 import EmailPage from './components/clients/EmailPage';
 import LastPage from './components/clients/LastPage';
+import EmployeesHome from './components/employees/EmployeesHome';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
             <Route path='/cart' element={<Cart />} />
             <Route path='/finishorder' element={<EmailPage/>} />
             <Route path='/seeyousoon' element={<LastPage/>}/>
+            <Route path='/employeeslogin' element={<EmployeesHome/>} />
           </Routes>
         </ShoppingCartProvider>
       </BrowserRouter>
