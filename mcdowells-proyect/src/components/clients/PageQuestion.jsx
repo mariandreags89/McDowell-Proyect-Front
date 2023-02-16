@@ -1,7 +1,6 @@
 import '../../assets/clients/pageQuestion.css'
 import email from '../../assets/images/email.png'
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
 import { useCartContext } from '../../context/ShoppingCartContext';
 
 const PageQuestion = () => {
@@ -22,11 +21,13 @@ const PageQuestion = () => {
                     <div className='centerQuestion'  >
                         <label className='infoText' for="fname">
                             Accede a tu cuenta o registrarte para acumular puntos con cada compra y disfrutar de descuentos exclusivos!.
-                            <br/>
+                        </label>
+                        <button className='btnQuestion' onClick={() => navigate('/login')}>Iniciar sesion</button>
+                        <label className='infoText' for="fname">
                             También puedes continuar sin registrarte.
                         </label>
-                        <button className='btnQuestion' >Iniciar sesion</button>
-                        <button className='btnQuestion' onClick={()=>navigate('/finishorder')}>Continuar sin registrarse</button>
+
+                        <button className='btnQuestion' onClick={() => navigate('/finishorder')}>Continuar sin registrarse</button>
                     </div>
                 </div>
 

@@ -1,19 +1,17 @@
-.containerQuestion {
+.containerLogin {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: stretch;
 }
 
-.leftContainerQuestion {
+.leftContainerLogin {
     width: 25%;
 }
 
-.rigthContainerQuestion {
+.rigthContainerLogin {
     width: 25%;
 }
-
-
 
 @media (min-width:800px) and (max-width:1700px) {
 
@@ -22,7 +20,7 @@
         max-width: 450px;
     }
 
-    .centerContainerQuestion {
+    .centerContainerLogin {
         background-color: #BCEFFF;
         position: relative;
         border: 4px solid rgb(0, 0, 0);
@@ -31,7 +29,7 @@
         height: 680px;
     }
 
-    .topQuestion {
+    .topLogin {
         display: flex;
         justify-content: center;
         flex-direction: row;
@@ -44,7 +42,7 @@
         background-color: #D9D9D9;
     }
 
-    .centerQuestion {
+    .centerLogin {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -56,22 +54,38 @@
     .infoText {
         text-align: center;
         font-weight: bold;
-        padding: 30px 30px;
+        padding: 10px 10px;
+        font-size: 20px;
     }
 
-    .email {
+    .createText {
+        cursor: pointer;
+        text-align: center;
+        font-family: 'Century Gothic';
+        color: #5B00B7;
+        -webkit-text-stroke: 0.5px #000000;
+        font-weight: bold;
+        font-size: 20px;
+        text-decoration: underline;
+    }
+
+    .infoLogin {
         align-self: center;
         text-align: center;
-        width: 350px;
+        width: 300px;
         padding: 10px 20px;
-        margin-top: 30px;
-    }
-
-    input[type=text]:focus {
+        margin-top: 10px;
         border: 3px solid #555;
+        border-radius: 10px;
     }
 
-    .btnQuestion {
+    .passwordText {
+        text-align: center;
+        padding: 10px 10px;
+        width: 350px;
+    }
+
+    .btnLogin {
         justify-self: self-end;
         margin: 20px 0;
         padding: 13px 13px;
@@ -81,10 +95,9 @@
         background-color: #FBC9FF;
         border: 2px solid #000000;
         cursor: pointer;
-        border-radius: 20px
     }
 
-    .bottonQuestion {
+    .bottonLogin {
         position: absolute;
         display: flex;
         flex-direction: row;
@@ -101,7 +114,7 @@
 
     }
 
-    .returnBtnQuestion {
+    .returnBtnLogin {
         cursor: pointer;
         width: 33px;
         padding-right: 15px;
@@ -114,9 +127,9 @@
         font-weight: bold;
         color: #B900A6;
         -webkit-text-stroke: 1px #000000;
-
-
     }
+
+
 }
 
 @media (max-width:800px) {
@@ -166,9 +179,11 @@
     .email {
         align-self: center;
         text-align: center;
-        width: 250px;
+        width: 350px;
         padding: 10px 20px;
-        margin-top: 20px;
+        margin-top: 30px;
+        border: 3px solid #555;
+        border-radius: 10px;
     }
 
     input[type=text]:focus {
@@ -227,7 +242,7 @@
         max-width: 250px;
     }
 
-    .centerContainerQuestion {
+    .centerContainerLogin {
         background-color: #BCEFFF;
         position: relative;
         border: 4px solid rgb(0, 0, 0);
@@ -236,7 +251,7 @@
         height: 550px;
     }
 
-    .topQuestion {
+    .topLogin {
         display: flex;
         justify-content: center;
         flex-direction: row;
@@ -249,7 +264,7 @@
         background-color: #D9D9D9;
     }
 
-    .centerQuestion {
+    .centerLogin {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -260,7 +275,7 @@
 
     .infoText {
         text-align: center;
-        font-size: 12px;
+        font-size: 30px;
         margin-top: 50px;
         font-weight: bold;
         padding: 20px 20px;
@@ -286,7 +301,7 @@
         cursor: pointer;
     }
 
-    .bottonQuestion {
+    .bottonLogin {
         position: absolute;
         display: flex;
         flex-direction: row;

@@ -1,40 +1,46 @@
+.asideContainer {
+    width: 25%;
+}
+
 .containerModal {
     width: 100vw;
     height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, .5);
-    padding: 40px;
+    background: rgba(0, 0, 0, 21%);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .containerModal_1 {
-    width: 500px;
+    display: flex;
+    width: 350px;
     min-height: 100px;
     background: #fff;
     position: relative;
-    border-radius: 5px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
+    box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
     padding: 20px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+    align-items: center;
+    justify-content: center;
 }
 
-.buttonModal {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 30px;
-    height: 30px;
-    border: none;
-    background: none;
+.btnModal {
+    
+    margin: 20px 0;
+    padding: 13px 13px;
+    font-family: 'Century Gothic';
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #FBC9FF;
+    border: 2px solid #000000;
     cursor: pointer;
-    transition: .3s ease all;
-    border-radius: 5px;
-    color: black;
-    display: flex;
-
+    border-radius: 20px;
 }
 
 button:hover {
@@ -59,12 +65,13 @@ button:hover {
 
 
 .textModal {
-    font-size: 42px;
+    font-size: 25px;
     font-weight: 700;
     margin-bottom: 10px;
 }
 
 .textModal_P {
-    font-size: 18px;
+    font-size: 15px;
     margin-bottom: 20px;
+    text-align: center;
 }

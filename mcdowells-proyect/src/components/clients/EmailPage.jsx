@@ -3,7 +3,7 @@ import '../../assets/clients/emailpage.css'
 import { useNavigate } from 'react-router-dom';
 import { useCartContext } from '../../context/ShoppingCartContext';
 import { useState } from 'react';
-import axios from 'axios'
+import OrdersManager from '../../services/order.Api';
 
 
 
@@ -17,16 +17,14 @@ function EmailPage() {
     const sendCart = async (e) => {
         e.preventDefault()
         let order = await context.cart
-        let mail = { email: userEmail }
-
-        await axios.post("http://localhost:3001/api/orders/create-order", mail)
-        await axios.post("http://localhost:3001/api/orders/create-product-order", order)
-        context.setCart([]) //Vaciamos el carrito
+        let mail = { email: userEmail, id_user: null }
+        await OrdersManager.createOrder(mail, order)
+        
+        context.setCart([])
         context.setTotalCart([{
             totalPrice: 0,
             totalQuantity: 0
-        }]) //Vaciamos el  total 
-        console.log(order)
+        }])
         navigate('/seeyousoon') //Nos lleva al último componente
     }
 
@@ -57,7 +55,7 @@ function EmailPage() {
                     <div className='bottomEmail'>
 
                         <p className='totalEmail'>
-                            <img className='returnBtnEmail' src={image} onClick={() => navigate('/menus')} />
+                            <img className='returnBtnEmail' src={image} onClick={() => navigate('/register-or-continue')} />
 
                             TOTAL: {context.totalCart[0].totalPrice}€
                         </p>
