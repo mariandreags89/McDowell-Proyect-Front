@@ -9,6 +9,7 @@ import { ShoppingCartProvider } from './context/ShoppingCartContext';
 import EmailPage from './components/clients/EmailPage';
 import LastPage from './components/clients/LastPage';
 import EmployeesHome from './components/employees/EmployeesHome';
+import Employees from './components/employees/Employees'
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
             <Route path='/finishorder' element={<EmailPage/>} />
             <Route path='/seeyousoon' element={<LastPage/>}/>
             <Route path='/employeeslogin' element={<EmployeesHome/>} />
+            <Route path='/employees' element={<Employees/>}/>
           </Routes>
         </ShoppingCartProvider>
       </BrowserRouter>

@@ -8,7 +8,7 @@ function EmployeesHome() {
 
     return (
         <>
-            <div className='container'>
+            <div className='container-home'>
                 <div className="logITitle">
                     <p className='logInText'>
                         LOG IN
@@ -30,7 +30,7 @@ function EmployeesHome() {
                             name="empPass" placeholder="password" required />
 
                         <input className='logInBtn' type="submit" value="LOG IN" />
-
+                        {/* <button className='BTN' onClick={() => navigate(`/employees`)}/> */}
                     </form>
                 </div>
             </div>
