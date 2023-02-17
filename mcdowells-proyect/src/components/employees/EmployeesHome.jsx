@@ -1,10 +1,14 @@
 import '../../assets/employees/employeeshome.css'
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 function EmployeesHome() {
 
+    const [employeeUser, setEmployeeUser] = useState();
+    const [empPass, setEmpPass] = useState();
     const navigate = useNavigate();
+    console.log(employeeUser,empPass);
 
     return (
         <>
@@ -26,11 +30,11 @@ function EmployeesHome() {
 
                         <label className='password'>PASSWORD</label>
 
-                        <input className='passwordInput' type="text" id="emailOrder"
+                        <input className='passwordInput' type="text" id="empPass"
                             name="empPass" placeholder="password" required />
 
-                        <input className='logInBtn' type="submit" value="LOG IN" />
-                        {/* <button className='BTN' onClick={() => navigate(`/employees`)}/> */}
+                        {/* <input className='logInBtn' type="submit" value="LOG IN" /> */}
+                        <button className='logInBtn' onClick={() => navigate(`/employees`)}>LOG IN</button>
                     </form>
                 </div>
             </div>
