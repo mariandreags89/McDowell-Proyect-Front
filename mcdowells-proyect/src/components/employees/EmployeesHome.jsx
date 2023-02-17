@@ -8,7 +8,7 @@ function EmployeesHome() {
 
     return (
 
-        <div className='container'>
+        <div className='containerLog'>
             <div className="logITitle">
                 <p className='logInText'>
                     LOG IN
