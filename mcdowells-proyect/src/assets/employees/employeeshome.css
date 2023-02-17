@@ -1,5 +1,7 @@
-.container {
+
+.containerLog {
     display: flex;
+    position: absolute;
     flex-wrap: wrap;
     flex-direction: column;
     padding: 0;
