@@ -1,6 +1,7 @@
 import '../../assets/employees/navbar.css';
 
 import logo from '../../assets/images/logo.ico';
+import logout from '../../assets/images/logout.png';
 
 
 const Navbar = () => {
@@ -12,7 +13,9 @@ const Navbar = () => {
       <div className='nav-right'>
       <img className='userImg' src='https://cdn-icons-png.flaticon.com/512/3899/3899618.png' alt='NOT FOUND'/>
         <div className='nav-user'>
-        USUARIO logeado
+        CAMARERO
+          <img  className='userImg' width='100'  src={logout} alt='' />
+          LOG OUT
         </div>
       </div>
     </div>

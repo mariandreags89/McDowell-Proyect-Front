@@ -16,7 +16,8 @@
 
 .container-navbar {
         width: 100%;
-        text-align: center;
+        //text-align: center;
+        
     } 
 .container-list {
     display: flex;
