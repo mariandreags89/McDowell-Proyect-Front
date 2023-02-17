@@ -1,14 +1,14 @@
 import '../../assets/employees/employeeshome.css'
 import React from 'react';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function EmployeesHome() {
 
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
     return (
 
-        <div className='containerLog'>
+        <div className='container'>
             <div className="logITitle">
                 <p className='logInText'>
                     LOG IN
