@@ -1,4 +1,4 @@
-.card_container {
+/* .card_container {
     border: 1px solid #E0E0E0;
     display: flex;
     box-shadow: none;
@@ -8,15 +8,15 @@
     border-radius: 16px;
     position: relative;
     cursor: pointer;
-}
+} */
 .card {
     width: 100%;
     height: 100%;
     box-shadow: none;
-    /* margin-left: 16px; */
+    margin-left: 4%; 
     box-shadow: #f5f2f229 0px 1px 4px;
     border-radius: 8px;
-    /* margin-top: 20px; */
+    margin-top: 2%;
     /* background-color:#D9D9D9; */
 }
 
@@ -30,9 +30,9 @@
     overflow: hidden;
     border-radius: 8px 8px 0px 0px;
 }
-.card:hover{
+/* .card:hover{
     transform: scale(1.1);
-}
+} */
 
 .content-text{
     padding-left: 16px;

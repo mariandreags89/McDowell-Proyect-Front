@@ -6,7 +6,7 @@ const OrdersList = () => {
     // <Paper >
         <div className="container-card">
             <div className='title-order'>
-              <h1>To do</h1>
+              <h1 className='title'>To do</h1>
             </div>
             <OrdersCard/>
             <OrdersCard/>

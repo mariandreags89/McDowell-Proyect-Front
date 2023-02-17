@@ -12,7 +12,7 @@ function EmployeesHome() {
 
     return (
         <>
-            <div className='container-home'>
+            <div className='container-enployees'>
                 <div className="logITitle">
                     <p className='logInText'>
                         LOG IN
