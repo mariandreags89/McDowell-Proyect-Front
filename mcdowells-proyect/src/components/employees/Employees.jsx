@@ -23,7 +23,7 @@ function Employees() {
     }, [])
 
   return (
-    <div className='container-enployees'>
+    <div className='container-employees'>
       <div className='container-navbar'>
         <Navbar/>
       </div>

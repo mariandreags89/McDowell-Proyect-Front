@@ -1,11 +1,11 @@
-import '../../assets/employees/card.css';
+import '../../assets/employees/orderCard.css';
 
 const OrdersCard = () => {
   return (
     <div className="card_container">
       <div className="card">
         <div className="numOrder">
-          <h1>Num order</h1>
+          <p className='orderNum'>Num order</p>
         </div>
           <div className="content-text">
               <h4 className="paragraph">articulo X</h4>
