@@ -75,3 +75,10 @@ button:hover {
     margin-bottom: 20px;
     text-align: center;
 }
+
+.textModal_P_error {
+    font-size: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: red;
+}
