@@ -1,17 +1,16 @@
 import OrdersCard from "./OrdersCard";
 import '../../assets/employees/ordersList.css';
 
-const OrdersList = () => {
+const OrdersList = ({statu}) =>{
+  console.log(statu)
   return (
-    // <Paper >
         <div className="container-card">
             <div className='title-order'>
-              <h1 className='title'>To do</h1>
+              <h1 className='title'>{statu.description}</h1>
             </div>
             <OrdersCard/>
             <OrdersCard/>
         </div>
-    // </Paper>
   )
 }
 
