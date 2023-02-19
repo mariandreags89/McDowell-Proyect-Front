@@ -29,7 +29,8 @@ function EmployeesHome() {
                     <input className='passwordInput' type="text" id="emailOrder"
                         name="empPass" placeholder="password" required />
 
-                    <input className='logInBtn' type="submit" value="LOG IN" />
+                    {/* <input className='logInBtn' type="submit" value="LOG IN" /> */}
+                    <button className='start' onClick={() => navigate(`/employees`)}>LOG IN</button>
 
                 </form>
             </div>
