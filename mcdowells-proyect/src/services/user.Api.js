@@ -17,11 +17,9 @@ class UsersManager {
 
   static async register(userInformation, setCreated, setNotCreated, setErrors) {
     let response;
+    console.log(userInformation)
     try {
-      response = await axios.post(
-        "http://localhost:3001/api/users/register",
-        userInformation
-      );
+      response = await axios.post("http://localhost:3001/api/users/register", userInformation );
       setCreated(true);
     } catch (error) {
       setErrors(error.response.data.errorsMsg);

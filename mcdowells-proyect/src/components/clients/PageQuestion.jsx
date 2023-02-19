@@ -34,7 +34,7 @@ const PageQuestion = () => {
                 <div className='bottonQuestion'>
 
                     <p className='totalBotton'>
-                        <img className='returnBtnQuestion' src={image} onClick={() => navigate('/menus')} />
+                        <img className='returnBtnQuestion' src={image} alt='' onClick={() => navigate('/menus')} />
 
                         TOTAL: {context.totalCart[0].totalPrice}€
                     </p>
