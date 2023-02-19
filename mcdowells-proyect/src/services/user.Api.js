@@ -12,13 +12,13 @@ class UsersManager {
     } catch (error) {
       setNotLoggedIn(true);
     }
-    return setLoggedIn, setNotLoggedIn, response;
+    return (setLoggedIn, setNotLoggedIn, response)
   }
 
   static async register(userInformation, setCreated, setNotCreated, setErrors) {
-    let response
+    let response;
     try {
-       response =await axios.post(
+      response = await axios.post(
         "http://localhost:3001/api/users/register",
         userInformation
       );
@@ -27,7 +27,7 @@ class UsersManager {
       setErrors(error.response.data.errorsMsg);
       setNotCreated(true);
     }
-    return setCreated, setNotCreated, setErrors, response;
+    return (setCreated, setNotCreated, setErrors, response)
   }
 }
 

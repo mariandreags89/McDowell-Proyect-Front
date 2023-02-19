@@ -33,8 +33,6 @@ const Register = () => {
             contextUser.setUser(response.data)
             setErrors(null)
         }
-        console.log(errors)
-
     }
 
     const sendOrder = async () => {

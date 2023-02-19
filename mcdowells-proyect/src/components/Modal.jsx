@@ -11,7 +11,7 @@ const Modal = (props) => {
             <div className="containerModal_1" onClick={props.back}>
 
                 <h1 className="textModal">{props.title}</h1>
-                {MsgErrors ? MsgErrors.map((error, i) => <p key={i} className="textModal_P_error">{error.msg}</p>) : 
+                {MsgErrors ? MsgErrors.map((error, i) => <p key={i} className="textModal_P">{error.msg}</p>) : 
                     <p className="textModal_P">{props.text}</p>}
 
                 <button className='btnModal' onClick={props.route}>ACEPTAR</button>
