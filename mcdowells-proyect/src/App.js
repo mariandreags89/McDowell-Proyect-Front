@@ -13,9 +13,8 @@ import Login from "./components/clients/Login";
 import Register from "./components/clients/Register";
 import { UserProvider } from "./context/User";
 import EmployeesHome from './components/employees/EmployeesHome';
-import EmployeesHome from './components/employees/EmployeesHome';
 import Employees from './components/employees/Employees'
-import Employees from './components/employees/Employees'
+
 
 
 function App() {
@@ -34,8 +33,6 @@ function App() {
               <Route path="/register/new-account" element={<Register />} />
               <Route path="/finishorder" element={<EmailPage />} />
               <Route path="/seeyousoon" element={<LastPage />} />
-            <Route path='/employeeslogin' element={<EmployeesHome/>} />
-            <Route path='/employees' element={<Employees/>}/>
             <Route path='/employeeslogin' element={<EmployeesHome/>} />
             <Route path='/employees' element={<Employees/>}/>
             </Routes>
