@@ -2,7 +2,7 @@ import '../../assets/employees/employeeshome.css'
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function EmployeesHome() {
+function EmployeeHome() {
 
     const navigate = useNavigate();
 
@@ -30,7 +30,7 @@ function EmployeesHome() {
                         name="empPass" placeholder="password" required />
 
                     {/* <input className='logInBtn' type="submit" value="LOG IN" /> */}
-                    <button className='start' onClick={() => navigate(`/employees`)}>LOG IN</button>
+                    <button className='logInBtn' onClick={() => navigate("/employees")}>LOG IN</button>
 
                 </form>
             </div>
@@ -40,4 +40,4 @@ function EmployeesHome() {
     )
 }
 
-export default EmployeesHome;
+export default EmployeeHome;
