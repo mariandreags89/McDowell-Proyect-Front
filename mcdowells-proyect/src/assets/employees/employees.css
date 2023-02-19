@@ -1,0 +1,27 @@
+.container-enployees {
+    display: flex;
+    position: absolute;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #316691;
+}
+
+.container-navbar {
+    width: 99.49%;
+    text-align: center;
+
+}
+
+.container-list {
+    display: flex;
+    flex-direction: row;
+    background-color: #316691;
+    justify-content: center;
+    width: 100%;
+    
+
+}

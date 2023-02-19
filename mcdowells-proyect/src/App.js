@@ -1,7 +1,7 @@
 import "./assets/App.css";
 import React from "react";
 import ClientsHome from "./components/clients/ClientsHome";
-import Menus from "./components/clients/Menus";
+import Menus from "./components/clients/Menus"
 import Cart from "./components/clients/Cart";
 import ProductDetails from "./components/clients/ProductDetails";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -12,6 +12,9 @@ import PageQuestion from "./components/clients/PageQuestion";
 import Login from "./components/clients/Login";
 import Register from "./components/clients/Register";
 import { UserProvider } from "./context/User";
+import EmployeesHome from './components/employees/EmployeesHome';
+import Employees from './components/employees/Employees'
+
 
 function App() {
   return (
@@ -29,6 +32,8 @@ function App() {
               <Route path="/register/new-account" element={<Register />} />
               <Route path="/finishorder" element={<EmailPage />} />
               <Route path="/seeyousoon" element={<LastPage />} />
+            <Route path='/employeeslogin' element={<EmployeesHome/>} />
+            <Route path='/employees' element={<Employees/>}/>
             </Routes>
           </UserProvider>
         </ShoppingCartProvider>
@@ -36,5 +41,6 @@ function App() {
     </>
   );
 }
+
 
 export default App;
