@@ -3,7 +3,8 @@ import '../../assets/clients/emailpage.css'
 import { useNavigate } from 'react-router-dom';
 import { useCartContext } from '../../context/ShoppingCartContext';
 import { useState } from 'react';
-import axios from 'axios'
+import OrdersManager from '../../services/order.Api';
+import Modal from '../Modal'
 
 
 
@@ -13,21 +14,23 @@ function EmailPage() {
     const image = 'https://cdn-icons-png.flaticon.com/512/1053/1053188.png?w=740&t=st=1675464717~exp=1675465317~hmac=123970fb6328e4fa8a9eb22784499c906aaddd8cf173382cf6cca075051fc494';
 
     const [userEmail, setUserEmail] = useState()
+    const [notCreated, setNotCreated] = useState(false)
+    const [error, setError] = useState()
 
     const sendCart = async (e) => {
         e.preventDefault()
         let order = await context.cart
-        let mail = { email: userEmail }
-
-        await axios.post("http://localhost:3001/api/orders/create-order", mail)
-        await axios.post("http://localhost:3001/api/orders/create-product-order", order)
-        context.setCart([]) //Vaciamos el carrito
-        context.setTotalCart([{
-            totalPrice: 0,
-            totalQuantity: 0
-        }]) //Vaciamos el  total 
-        console.log(order)
-        navigate('/seeyousoon') //Nos lleva al último componente
+        let mail = { email: userEmail, id_user: null }
+        const response = await OrdersManager.createOrder(mail, order, setNotCreated, setError)
+        if (typeof response !== 'undefined') {
+            context.setCart([])
+            context.setTotalCart([{
+                totalPrice: 0,
+                totalQuantity: 0
+            }])
+            navigate('/seeyousoon') 
+        }
+        
     }
 
     return (
@@ -57,7 +60,7 @@ function EmailPage() {
                     <div className='bottomEmail'>
 
                         <p className='totalEmail'>
-                            <img className='returnBtnEmail' src={image} onClick={() => navigate('/menus')} />
+                            <img className='returnBtnEmail' src={image} onClick={() => navigate('/register-or-continue')} />
 
                             TOTAL: {context.totalCart[0].totalPrice}€
                         </p>
@@ -67,6 +70,7 @@ function EmailPage() {
                 <div className='rigthContainerMenu'>
                 </div>
             </div>
+            {notCreated && <Modal title={"Ha ocurrido un error"} textErrors={error} route={() => setNotCreated(!notCreated)} />}
         </>
     )
 }

@@ -7,10 +7,9 @@ import { useNavigate } from 'react-router-dom';
 import { useCartContext } from '../../context/ShoppingCartContext';
 
 
+
 function LastPage() {
     const context = useCartContext();
-
-    console.log(context.cart)
     const navigate = useNavigate();
     function redireccionar() {
 
