@@ -31,9 +31,9 @@ function App() {
               <Route path="/register-or-continue" element={<PageQuestion />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register/new-account" element={<Register />} />
-              <Route path="/finishorder" element={<EmailPage />} />
-              <Route path="/seeyousoon" element={<LastPage />} />
-            <Route path='/employeeslogin' element={<EmployeeHome/>} />
+              <Route path="/finish-order" element={<EmailPage />} />
+              <Route path="/see-you-soon" element={<LastPage />} />
+            <Route path='/employees-login' element={<EmployeeHome/>} />
             <Route path='/employees' element={<Employees/>}/>
             </Routes>
           </UserProvider>
