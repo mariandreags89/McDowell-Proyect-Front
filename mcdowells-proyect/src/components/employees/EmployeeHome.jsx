@@ -45,11 +45,11 @@ function EmployeeHome() {
                         </label>
 
                         <input className='userInput' type="text" id="employeeUser"
-                            name="clientemail" placeholder="Introduzca email" onChange={(e) => setUserName(e.target.value)} required />
+                            name="employeeemail" placeholder="Introduzca usuario" onChange={(e) => setUserName(e.target.value)} required />
 
                         <label className='password'>PASSWORD</label>
 
-                        <input className='passwordInput' type="text" id="emailOrder"
+                        <input className='passwordInput' type="password" id="emailOrder"
                             name="empPass" placeholder="password" onChange={(e) => setPassword(e.target.value)} required />
 
                         <input className='logInBtn' type="submit" value="LOG IN" />
