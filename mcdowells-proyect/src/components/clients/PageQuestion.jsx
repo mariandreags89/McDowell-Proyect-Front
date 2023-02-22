@@ -27,7 +27,7 @@ const PageQuestion = () => {
                             También puedes continuar sin registrarte.
                         </label>
 
-                        <button className='btnQuestion' onClick={() => navigate('/finishorder')}>Continuar sin registrarse</button>
+                        <button className='btnQuestion' onClick={() => navigate('/finish-order')}>Continuar sin registrarse</button>
                     </div>
                 </div>
 
