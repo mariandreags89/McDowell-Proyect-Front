@@ -12,7 +12,7 @@ import PageQuestion from "./components/clients/PageQuestion";
 import Login from "./components/clients/Login";
 import Register from "./components/clients/Register";
 import { UserProvider } from "./context/User";
-import EmployeesHome from './components/employees/EmployeesHome';
+import EmployeeHome from './components/employees/EmployeeHome';
 import Employees from './components/employees/Employees'
 
 
@@ -31,9 +31,9 @@ function App() {
               <Route path="/register-or-continue" element={<PageQuestion />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register/new-account" element={<Register />} />
-              <Route path="/finishorder" element={<EmailPage />} />
-              <Route path="/seeyousoon" element={<LastPage />} />
-            <Route path='/employeeslogin' element={<EmployeesHome/>} />
+              <Route path="/finish-order" element={<EmailPage />} />
+              <Route path="/see-you-soon" element={<LastPage />} />
+            <Route path='/employees-login' element={<EmployeeHome/>} />
             <Route path='/employees' element={<Employees/>}/>
             </Routes>
           </UserProvider>

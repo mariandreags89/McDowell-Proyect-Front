@@ -28,7 +28,7 @@ function EmailPage() {
                 totalPrice: 0,
                 totalQuantity: 0
             }])
-            navigate('/seeyousoon') 
+            navigate('/see-you-soon') 
         }
         
     }

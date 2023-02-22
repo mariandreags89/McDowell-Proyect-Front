@@ -19,7 +19,7 @@ function ClientsHome() {
                         <img className='mcTitle' src={mcTitle} alt='NOT FOUND' />
                     </div>
                     <div className='centerDiv'>
-                    <img className='logo' src={logo} alt='NOT FOUND' onDoubleClick={()=>navigate('/employeeslogin')}/>
+                    <img className='logo' src={logo} alt='NOT FOUND' onDoubleClick={()=>navigate('/employees-login')}/>
                     </div>
                     <div className='bottomDiv'>
                         <button className='start' onClick={() => navigate(`/menus`)}>EMPEZAR PEDIDO</button>
