@@ -24,14 +24,11 @@ function Employees() {
 
   return (
     <div className='container-employees'>
-      <div className='container-navbar'>
-        <Navbar/>
-      </div>
-      <div className='container-list'>
+        <div  className="navEmpl"><Navbar/> </div>
       {status.map((statu) =>(
         <OrdersList statu={statu}/>
       ))}
-      </div>
+
     </div>
   );
 }
