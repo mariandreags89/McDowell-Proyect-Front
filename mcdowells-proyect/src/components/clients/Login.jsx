@@ -42,7 +42,7 @@ const Login = () => {
             totalQuantity: 0
         }])
         contextUser.setUser([])
-        navigate('/seeyousoon')
+        navigate('/see-you-soon')
     }
 
     return <>
