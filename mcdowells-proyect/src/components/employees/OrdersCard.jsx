@@ -1,7 +1,7 @@
 import '../../assets/employees/orderCard.css';
 
 const OrdersCard = ({order}) => {
-console.log(order)
+
 
   return (
     <div className="card_container">
