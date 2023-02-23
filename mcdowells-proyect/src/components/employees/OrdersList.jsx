@@ -20,11 +20,13 @@ const OrdersList = ({statu}) =>{
   return (
         <div className="container-card">
             <div className='title-order'>
-              <h1 className='title'>{statu.description}</h1>
+              <p className='title'>{statu.description}</p>
             </div>
+            <div className='statusDiv'>
             {ordersDetail.map((order) =>(
               <OrdersCard order={order}/>
               ))}
+              </div>
         </div>
   )
 }

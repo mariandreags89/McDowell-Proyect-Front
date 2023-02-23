@@ -1,7 +1,7 @@
 import '../../assets/employees/orderCard.css';
 
-const OrdersCard = ({order}) => {
-console.log(order)
+const OrdersCard = ({ order }) => {
+  console.log(order)
 
   return (
     <div className="card_container">
@@ -9,14 +9,18 @@ console.log(order)
         <div className="numOrder">
           <p className='orderNum'>Num order: {order.id_order}</p>
         </div>
-          <div className="content-text">
-              <h4 className="paragraph">{order.id_product}</h4>
-              <p className="paragraph">{order.name}</p>
-              <p className="paragraph">{order.units}</p>
-          </div>
-         </div>
+        <div className="content-text">
+          <p className="orderNum">{order.id_product}
+           
+          </p>
+          <p className="orderName"> •{order.name}</p>
+          <p className="productQ">Cantidad: {order.units}</p>
+          <button className='next'>NEXT STATUS</button>
+          <p className='divisor'>--------------------</p>
+        </div>
+      </div>
     </div>
-    
+
   )
 }
 
