@@ -6,7 +6,6 @@ import '../../assets/employees/ordersList.css';
 const OrdersList = ({statu}) =>{
   
     const [ordersDetail, setOrdersDetail] = useState([]);
-    const [filtered, setFiltered]= useState([]);
 
     useEffect(() => {
         const getOrdersDetail = async () => {
@@ -15,16 +14,8 @@ const OrdersList = ({statu}) =>{
             
         }
         getOrdersDetail();
-    }, [statu])
+    }, [])
 
-    useEffect(() => {
-      let numbers=[];
-      for (let i = 0; i < ordersDetail.length; i++) {
-        numbers.push(ordersDetail[i].id_order)
-      };
-      setFiltered([...new Set(numbers)]);
-    }, [ordersDetail]);
-  
     
   return (
         <div className="container-card">
@@ -32,8 +23,10 @@ const OrdersList = ({statu}) =>{
               <p className='title'>{statu.description}</p>
             </div>
             <div className='statusDiv'>
-              <OrdersCard ordersDetail={ordersDetail} filtered={filtered}/>
-            </div>
+            {ordersDetail.map((order) =>(
+              <OrdersCard order={order}/>
+              ))}
+              </div>
         </div>
   )
 }
