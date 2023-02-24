@@ -26,7 +26,6 @@ const Navbar = () => {
   const logOut = () => {
     contextUser.setUser([])
     navigate('/employees-login')
-    console.log(contextUser.setUser())
     
 
   }
