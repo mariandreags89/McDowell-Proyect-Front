@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const in_status=[1,2,3,4,5].join();
- 
+
 function Employees() {
     const navigate = useNavigate();
     const [status, setStatus] = useState([]);
@@ -19,7 +19,7 @@ function Employees() {
             
         }
         getStatus();
-        console.log(status)
+        
     }, [])
 
   return (
