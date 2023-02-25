@@ -5,7 +5,7 @@ import { useUserContext } from '../../context/User';
 
 
 
-const OrdersCard = ({ ordersDetail, filtered }) => {
+const OrdersCard = ({ ordersDetail, filtered, setStatus }) => {
   // const [status,setStatus]=useState();
   // const [number,setNumber]=useState();
   const contexUser = useUserContext()
@@ -23,6 +23,9 @@ const OrdersCard = ({ ordersDetail, filtered }) => {
 
     if (status !== 5) {
       await authAxios.patch(`http://localhost:3001/api/orders/status/${one}`)
+      // llamar a la función setStatus para actualizar el estado en el componente padre
+      setStatus(status + 1);
+
     }
   }
 

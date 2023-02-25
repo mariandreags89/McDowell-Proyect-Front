@@ -7,6 +7,8 @@ const OrdersList = ({statu}) =>{
   
     const [ordersDetail, setOrdersDetail] = useState([]);
     const [filtered, setFiltered]= useState([]);
+    const [status, setStatus] = useState(statu.id_status); // nuevo estado
+
 
     useEffect(() => {
         const getOrdersDetail = async () => {
@@ -15,7 +17,7 @@ const OrdersList = ({statu}) =>{
             
         }
         getOrdersDetail();
-    }, [statu])
+    }, [status, ordersDetail])
 
     useEffect(() => {
       let numbers=[];
@@ -34,7 +36,7 @@ const OrdersList = ({statu}) =>{
               <p className='title'>{statu.description}</p>
             </div>
             <div className='statusDiv'>
-              <OrdersCard ordersDetail={ordersDetail} filtered={filtered}/>
+              <OrdersCard ordersDetail={ordersDetail} filtered={filtered} setStatus={setStatus} />
             </div>
         </div>
   )
