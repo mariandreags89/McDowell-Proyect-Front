@@ -41,15 +41,15 @@ const OrdersCard = ({ ordersDetail, filtered }) => {
                   <p className='none'>{status = order.id_status}</p>
                   <p className="orderName"> •{order.name}</p>
                   <p className="productQ">Cantidad: {order.units}</p>
-                  {(contexUser.user.role === "admin" && order.id_status !== 5) ||
-                    (contexUser.user.role === "waiter" && order.id_status !== 5) ||
-                    (contexUser.user.role === "chef" && order.id_status !== 3) ?
-                    <button className='next' onClick={() => nextStatus(one)}>NEXT STATUS</button> : <></>}
+
                 </>
 
               )}
           </div>
-
+          {(contexUser.user.role === "admin" && status !== 5) ||
+            (contexUser.user.role === "waiter" && status !== 5) ||
+            (contexUser.user.role === "chef" && status !== 3) ?
+            <button className='next' onClick={() => nextStatus(one)}>NEXT STATUS</button> : <></>}
           <p className='divisor'>--------------------</p>
         </div>
       ))
