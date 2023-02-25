@@ -5,8 +5,6 @@ import '../../assets/employees/employees.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useUserContext } from "../../context/User";
-
-// const in_status=[1,2,3,4,5].join(); 
  
 function Employees() {
   
@@ -23,6 +21,8 @@ function Employees() {
         
       }
       getAccess();
+      
+      
   }, [id_user])
      
 

@@ -22,7 +22,9 @@ const OrdersList = ({statu}) =>{
       for (let i = 0; i < ordersDetail.length; i++) {
         numbers.push(ordersDetail[i].id_order)
       };
+     
       setFiltered([...new Set(numbers)]);
+      console.log(filtered)
     }, [ordersDetail]);
   
     
