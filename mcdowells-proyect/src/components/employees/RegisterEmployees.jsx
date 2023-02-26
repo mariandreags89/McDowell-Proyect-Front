@@ -4,6 +4,7 @@ import Modal from '../Modal';
 import { useNavigate } from 'react-router-dom';
 import { useUserContext } from '../../context/User';
 import UsersManager from '../../services/user.Api';
+import NewUser from './NewUser';
 
 
 
@@ -28,30 +29,28 @@ const RegisterEmployees = () => {
             password: password,
             role: role
         }
-        const response = await UsersManager.registerEmployees(infoUser, setCreated, setNotCreated, setErrors)
-        if (typeof response !== 'undefined') {
-            contextUser.setUser(response.data)
-            navigate('/employees')
-        }
+        await UsersManager.registerEmployees(infoUser, setCreated, setNotCreated, setErrors)
+
     }
 
-
     return (<>
+
         <div className='containerLogReg'>
+        
             <div className="logITitleReg">
                 <p className='logInTextReg'>
                     REGISTRO EMPLEADOS
                 </p>
             </div>
-            <div className='formDiv'>
+            <div className='formDivReg'>
                 <form className='formRegi' onSubmit={RegisterUser}>
                     <img className='userImg' src='https://cdn-icons-png.flaticon.com/512/3899/3899618.png' alt='NOT FOUND' />
 
                     <input className='userInput' type="text" id="employeeUser"
-                        name="employeeemail" placeholder="Introduzca usuario" onChange={(e) => setUserName(e.target.value)}  />
+                        name="employeeemail" placeholder="Introduzca usuario" onChange={(e) => setUserName(e.target.value)} />
 
                     <input className='passwordInput' type="password" id="emailOrder"
-                        name="empPass" placeholder="password" onChange={(e) => setPassword(e.target.value)}  />
+                        name="empPass" placeholder="password" onChange={(e) => setPassword(e.target.value)} />
 
                     <select className='selectRole' name="role" id="emailOrder" onChange={(e) => setRole(e.target.value)}>
                         <option value=""></option>
@@ -61,12 +60,11 @@ const RegisterEmployees = () => {
 
                     <input className='logInBtn' type="submit" value="REGISTRAR" />
 
-
                 </form>
             </div>
         </div>
-        {created && <Modal title={""} text={"Se ha creado al usuario correctamente"} textErrors={errors} route={() => navigate('/employees')} />}
-        {notCreated && <Modal title={"Ha ocurrido un error"} textErrors={errors} route={() => setNotCreated(!notCreated)} />}
+        {created && <Modal title={""} text={"Se ha creado al usuario correctamente"} style={"btnModalEmployees"} textErrors={errors} route={() => navigate('/employees')} />}
+        {notCreated && <Modal title={"Ha ocurrido un error"} textErrors={errors} style={"btnModalEmployees"} route={() => setNotCreated(!notCreated)} />}
 
 
 

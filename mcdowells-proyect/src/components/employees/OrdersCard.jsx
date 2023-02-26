@@ -5,7 +5,7 @@ import { useUserContext } from '../../context/User';
 
 
 
-const OrdersCard = ({ ordersDetail, filtered }) => {
+const OrdersCard = ({ ordersDetail, filtered, setStatus  }) => {
   
   const contexUser = useUserContext()
 

@@ -26,7 +26,7 @@ const OrdersList = ({statu}) =>{
       };
      
       setFiltered([...new Set(numbers)]);
-      console.log(filtered)
+      
     }, [ordersDetail]);
   
     

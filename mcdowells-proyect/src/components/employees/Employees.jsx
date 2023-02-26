@@ -21,7 +21,7 @@ function Employees() {
     const id_user=contextUser.user.id_user
 
   useEffect(() => {
-
+    
     const getAccess = async () => {
       const response = await axios.get(`http://localhost:3001/api/worker/${id_user}`);
       setAccess(response.data[0].state);
