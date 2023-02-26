@@ -31,7 +31,6 @@
 }
 
 .btnModal {
-    
     margin: 20px 0;
     padding: 13px 13px;
     font-family: 'Century Gothic';
@@ -43,8 +42,25 @@
     border-radius: 20px;
 }
 
+.btnModalEmployees {
+    margin: 20px 0;
+    padding: 13px 13px;
+    font-family: 'Century Gothic';
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #125C98;
+    border: 2px solid #000000;
+    cursor: pointer;
+    border-radius: 20px;
+    color: white;
+}
+
 button:hover {
     background: #f2f2f2;
+}
+
+.btnModalEmployees:hover {
+    color: #000000;
 }
 
 .containerModal_text {
@@ -74,11 +90,4 @@ button:hover {
     font-size: 15px;
     margin-bottom: 20px;
     text-align: center;
-}
-
-.textModal_P_error {
-    font-size: 15px;
-    margin-bottom: 20px;
-    text-align: center;
-    color: red;
 }

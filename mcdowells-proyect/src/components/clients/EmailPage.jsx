@@ -70,7 +70,7 @@ function EmailPage() {
                 <div className='rigthContainerMenu'>
                 </div>
             </div>
-            {notCreated && <Modal title={"Ha ocurrido un error"} textErrors={error} route={() => setNotCreated(!notCreated)} />}
+            {notCreated && <Modal title={"Ha ocurrido un error"} textErrors={error} style={"btnModal"} route={() => setNotCreated(!notCreated)} />}
         </>
     )
 }

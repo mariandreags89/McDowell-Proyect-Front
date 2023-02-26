@@ -29,6 +29,23 @@ class UsersManager {
     }
     return (setCreated, setNotCreated, setErrors, response)
   }
+
+  static async registerEmployees(infoUser, setCreated, setNotCreated,setErrors){
+    let response
+    try {
+      response = await axios.post(
+        "http://localhost:3001/api/users/register-employeers",
+        infoUser
+      );
+      setCreated(true);
+    } catch (error) {
+      setErrors(error.response.data.errorsMsg);
+      setNotCreated(true);
+    }
+    return (setCreated, setNotCreated, setErrors, response)
+  }
 }
+
+
 
 export default UsersManager;
