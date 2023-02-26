@@ -5,14 +5,20 @@ import '../../assets/employees/employees.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useUserContext } from "../../context/User";
+import { useNavigate } from 'react-router-dom';
 import NewUser from './NewUser';
 
-function Employees() {
 
-  const contextUser = useUserContext();
-  const [status, setStatus] = useState([]);
-  const [access, setAccess] = useState([]);
-  const id_user = contextUser.user.id_user
+
+
+ 
+function Employees() {
+  const navigate = useNavigate()
+
+    const contextUser = useUserContext();
+    const [status, setStatus] = useState([]);
+    const [access, setAccess] = useState([]);
+    const id_user=contextUser.user.id_user
 
   useEffect(() => {
 
@@ -30,7 +36,7 @@ function Employees() {
   useEffect(() => {
 
     const getStatus = async () => {
-      // const response = await axios.get(`http://localhost:3001/api/status/${in_status}`);
+      
       const response = await axios.get(`http://localhost:3001/api/status/${access}`);
       setStatus(response.data);
 
@@ -43,14 +49,14 @@ function Employees() {
       <div className="navEmpl">
         <Navbar />
       </div>
-      <div className='btnAddNew'>
+      <div className='btnAddNew' onClick={()=>navigate('/admin/register-employeers')}>
         <NewUser/>
       </div>
       <br/>
       {status.map((statu) => (
         <OrdersList statu={statu} />
       ))}
-
+    
     </div>
   );
 }
