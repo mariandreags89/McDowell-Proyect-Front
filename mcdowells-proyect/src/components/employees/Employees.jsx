@@ -8,9 +8,6 @@ import { useUserContext } from "../../context/User";
 import { useNavigate } from 'react-router-dom';
 import NewUser from './NewUser';
 
-
-
-
  
 function Employees() {
   const navigate = useNavigate()
@@ -18,6 +15,9 @@ function Employees() {
     const contextUser = useUserContext();
     const [status, setStatus] = useState([]);
     const [access, setAccess] = useState([]);
+
+    const [update, setUdate] = useState(false);
+
     const id_user=contextUser.user.id_user
 
   useEffect(() => {
@@ -25,11 +25,8 @@ function Employees() {
     const getAccess = async () => {
       const response = await axios.get(`http://localhost:3001/api/worker/${id_user}`);
       setAccess(response.data[0].state);
-
     }
     getAccess();
-
-
   }, [id_user])
 
 
@@ -44,6 +41,8 @@ function Employees() {
     getStatus();
   }, [access])
 
+
+
   return (
     <div className='container-employees'>
       <div className="navEmpl">
@@ -54,10 +53,12 @@ function Employees() {
       </div>
       <br/>
       {status.map((statu) => (
-        <OrdersList statu={statu} />
+        <OrdersList statu={statu} update={()=>setUdate(!update)} refresh={update}/> 
       ))}
     
     </div>
+
+    
   );
 }
 
