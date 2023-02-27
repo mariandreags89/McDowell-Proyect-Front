@@ -18,6 +18,9 @@ function Employees() {
     const contextUser = useUserContext();
     const [status, setStatus] = useState([]);
     const [access, setAccess] = useState([]);
+
+    const [update, setUdate] = useState(false);
+
     const id_user=contextUser.user.id_user
 
   useEffect(() => {
@@ -25,11 +28,8 @@ function Employees() {
     const getAccess = async () => {
       const response = await axios.get(`http://localhost:3001/api/worker/${id_user}`);
       setAccess(response.data[0].state);
-
     }
     getAccess();
-
-
   }, [id_user])
 
 
@@ -42,7 +42,9 @@ function Employees() {
 
     }
     getStatus();
-  }, [access])
+  }, [access, update])
+
+
 
   return (
     <div className='container-employees'>
@@ -54,10 +56,12 @@ function Employees() {
       </div>
       <br/>
       {status.map((statu) => (
-        <OrdersList statu={statu} />
+        <OrdersList statu={statu} update={()=>setUdate(!update)}/>
       ))}
     
     </div>
+
+    
   );
 }
 

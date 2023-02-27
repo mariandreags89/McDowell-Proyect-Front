@@ -3,12 +3,12 @@ import axios from 'axios';
 import OrdersCard from "./OrdersCard";
 import '../../assets/employees/ordersList.css';
 
-const OrdersList = ({statu}) =>{
+const OrdersList = ({statu, update}) =>{
   
     const [ordersDetail, setOrdersDetail] = useState([]);
     const [filtered, setFiltered]= useState([]);
     const [status, setStatus] = useState(statu.id_status); // nuevo estado
-
+    const [updateList, setUpdateList] = useState(false)
 
     useEffect(() => {
         const getOrdersDetail = async () => {
@@ -17,7 +17,7 @@ const OrdersList = ({statu}) =>{
             
         }
         getOrdersDetail();
-    }, [status, ordersDetail])
+    }, [status]) // actualiza solo 1 tarjeta
 
     useEffect(() => {
       let numbers=[];
@@ -26,9 +26,11 @@ const OrdersList = ({statu}) =>{
       };
      
       setFiltered([...new Set(numbers)]);
-      
     }, [ordersDetail]);
   
+    useEffect(()=>{
+      update()
+    },[updateList])
     
   return (
         <div className="container-card">
@@ -36,7 +38,7 @@ const OrdersList = ({statu}) =>{
               <p className='title'>{statu.description}</p>
             </div>
             <div className='statusDiv'>
-              <OrdersCard ordersDetail={ordersDetail} filtered={filtered} setStatus={setStatus} />
+              <OrdersCard ordersDetail={ordersDetail} filtered={filtered} update={()=>setUpdateList(!updateList)}/>
             </div>
         </div>
   )
