@@ -19,14 +19,13 @@ const OrdersCard = ({ ordersDetail, filtered , update }) => {
         authorization: token
       }
     })
-    update()
+   
 
     if (status !== 5) {
       await authAxios.patch(`http://localhost:3001/api/orders/status/${one}`)
-      
+      update()
     }
   }
-
 
   return (
     <>

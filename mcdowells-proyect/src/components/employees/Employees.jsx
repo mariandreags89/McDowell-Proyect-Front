@@ -8,9 +8,6 @@ import { useUserContext } from "../../context/User";
 import { useNavigate } from 'react-router-dom';
 import NewUser from './NewUser';
 
-
-
-
  
 function Employees() {
   const navigate = useNavigate()
@@ -42,7 +39,7 @@ function Employees() {
 
     }
     getStatus();
-  }, [access, update])
+  }, [access])
 
 
 
@@ -56,7 +53,7 @@ function Employees() {
       </div>
       <br/>
       {status.map((statu) => (
-        <OrdersList statu={statu} update={()=>setUdate(!update)}/>
+        <OrdersList statu={statu} update={()=>setUdate(!update)} refresh={update}/> 
       ))}
     
     </div>
