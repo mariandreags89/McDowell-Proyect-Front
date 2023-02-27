@@ -82,8 +82,8 @@ const Register = () => {
             <div className='rigthContainerLogin'></div>
         </div>
 
-        {created && <Modal title={"Bienvenido"} text={`${name.toUpperCase()} ya formas parte de la familia McDowell. Te enviaremos por email el ticket de tu pedido, gracias por tu compra`} textErrors={errors} route={() => sendOrder()} />}
-        {notCreated && <Modal title={"Ha ocurrido un error"} textErrors={errors} route={() => setNotCreated(!notCreated)} />}
+        {created && <Modal title={"Bienvenido"} style={"btnModal"}  text={`${name.toUpperCase()} ya formas parte de la familia McDowell. Te enviaremos por email el ticket de tu pedido, gracias por tu compra`} textErrors={errors} route={() => sendOrder()} />}
+        {notCreated && <Modal title={"Ha ocurrido un error"} style={"btnModal"}  textErrors={errors} route={() => setNotCreated(!notCreated)} />}
     </>
 
 }

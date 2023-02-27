@@ -77,9 +77,9 @@ const Login = () => {
             </div>
             <div className='rigthContainerLogin'></div>
         </div>
-        {loggedIn && <Modal title={`Bienvenido ${contextUser.user.name.toUpperCase()}`} text={"Te enviaremos por email el ticket de tu pedido, gracias por tu compra"}
+        {loggedIn && <Modal title={`Bienvenido ${contextUser.user.name.toUpperCase()}`} style={"btnModal"}  text={"Te enviaremos por email el ticket de tu pedido, gracias por tu compra"}
             route={() => sendOrder()} />}
-        {notLoggedIn && <Modal title={"Ha habido un error"} text={"Email y/o contraseña no encontrado"} route={() => setNotLoggedIn(false)} />}
+        {notLoggedIn && <Modal title={"Ha habido un error"} style={"btnModal"}  text={"Email y/o contraseña no encontrado"} route={() => setNotLoggedIn(false)} />}
     </>
 
 }
