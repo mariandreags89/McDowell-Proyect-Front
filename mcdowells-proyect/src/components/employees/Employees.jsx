@@ -6,6 +6,8 @@ import axios from 'axios';
 import { useUserContext } from "../../context/User";
 import { useNavigate } from 'react-router-dom';
 import NewUser from './NewUser';
+import UsersManager from '../../services/user.Api';
+import OrdersManager from '../../services/order.Api';
 
 
 function Employees() {
@@ -20,22 +22,16 @@ function Employees() {
   const id_user = contextUser.user.id_user
 
   useEffect(() => {
-
     const getAccess = async () => {
-      const response = await axios.get(`${process.env.REACT_APP_API_URL}/worker/${id_user}`);
-      setAccess(response.data[0].state);
+      await UsersManager.getAccess(setAccess, id_user)
     }
-    getAccess();
+    getAccess()
   }, [id_user])
 
 
   useEffect(() => {
-
     const getStatus = async () => {
-      
-      const response = await axios.get(`http://localhost:8080/api/status/${access}`);
-      setStatus(response.data);
-
+      await OrdersManager.getStatusOrders(setStatus, access)
     }
     getStatus();
   }, [access])
