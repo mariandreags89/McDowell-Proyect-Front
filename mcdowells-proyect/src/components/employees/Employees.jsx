@@ -22,7 +22,7 @@ function Employees() {
   useEffect(() => {
 
     const getAccess = async () => {
-      const response = await axios.get(`http://localhost:3001/api/worker/${id_user}`);
+      const response = await axios.get(`http://localhost:8080/api/worker/${id_user}`);
       setAccess(response.data[0].state);
     }
     getAccess();
@@ -32,8 +32,8 @@ function Employees() {
   useEffect(() => {
 
     const getStatus = async () => {
-
-      const response = await axios.get(`http://localhost:3001/api/status/${access}`);
+      
+      const response = await axios.get(`http://localhost:8080/api/status/${access}`);
       setStatus(response.data);
 
     }

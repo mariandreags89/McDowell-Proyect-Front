@@ -14,7 +14,9 @@ const OrdersList = ({ statu, update, refresh }) => {
   useEffect( () => {
     //OrdersManager.getOrdersDetail(statu.id_status,setOrdersDetail)
     const getOrdersDetail = async () => {
-      const response = await axios.get(`http://localhost:3001/api/orders/ordersDetail/${statu.id_status}`);
+
+      const response = await axios.get(`http://localhost:8080/api/orders/ordersDetail/${statu.id_status}`);
+
       setOrdersDetail(response.data);
     }
     getOrdersDetail(); 
