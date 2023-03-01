@@ -22,7 +22,7 @@ const OrdersCard = ({ ordersDetail, filtered, update }) => {
 
 
     if (status !== 5) {
-      await authAxios.patch(`http://localhost:3001/api/orders/status/${one}`)
+      await authAxios.patch(`${process.env.REACT_APP_API_URL}/orders/status/${one}`)
       update()
     }
   }

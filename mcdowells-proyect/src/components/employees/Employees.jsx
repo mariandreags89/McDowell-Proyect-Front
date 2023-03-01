@@ -22,7 +22,7 @@ function Employees() {
   useEffect(() => {
 
     const getAccess = async () => {
-      const response = await axios.get(`http://localhost:8080/api/worker/${id_user}`);
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/worker/${id_user}`);
       setAccess(response.data[0].state);
     }
     getAccess();
