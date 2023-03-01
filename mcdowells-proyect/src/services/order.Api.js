@@ -45,7 +45,7 @@ class OrdersManager {
 
   static async getStatusOrders(setStatus, access) {
     const response = await axios.get(
-      `http://localhost:8080/api/status/${access}`
+      `${process.env.REACT_APP_API_URL}/status/${access}`
     );
     setStatus(response.data);
     return setStatus;

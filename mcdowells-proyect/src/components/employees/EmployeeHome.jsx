@@ -12,7 +12,6 @@ function EmployeeHome() {
 
     const [userName, setUserName] = useState()
     const [password, setPassword] = useState()
-    //Las dos líneas siguientes las usa para el modal
     const [loggedIn, setLoggedIn] = useState(false)
     const [notLoggedIn, setNotLoggedIn] = useState(false)
 

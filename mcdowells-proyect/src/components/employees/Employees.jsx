@@ -16,7 +16,6 @@ function Employees() {
   const contextUser = useUserContext();
   const [status, setStatus] = useState([]);
   const [access, setAccess] = useState([]);
-
   const [update, setUdate] = useState(false);
 
   const id_user = contextUser.user.id_user
