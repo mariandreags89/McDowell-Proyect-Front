@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import axios from 'axios';
 import { useCartContext } from '../../context/ShoppingCartContext';
-
+import ProductsManager from '../../services/products.Api';
 
 
 function Menus() {
@@ -14,14 +14,13 @@ function Menus() {
     const context = useCartContext();
 
     useEffect(() => {
-        const getProducts = async () => {
-
+       /* const getProducts = async () => {
             const response = await axios.get(`${process.env.REACT_APP_API_URL}/products/all-products`);
-
             setProducts(response.data);
-            
         }
-        getProducts();
+        getProducts(); */
+        ProductsManager.getAllProducts(setProducts)
+
     }, [])
 
 

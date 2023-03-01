@@ -12,12 +12,12 @@ const OrdersList = ({ statu, update, refresh }) => {
   const [updateList, setUpdateList] = useState(false)
 
   useEffect( () => {
-    //OrdersManager.getOrdersDetail(statu.id_status,setOrdersDetail)
-    const getOrdersDetail = async () => {
+    OrdersManager.getOrdersDetail(statu.id_status,setOrdersDetail)
+    /*const getOrdersDetail = async () => {
       const response = await axios.get(`${process.env.REACT_APP_API_URL}/orders/ordersDetail/${statu.id_status}`);
       setOrdersDetail(response.data);
     }
-    getOrdersDetail(); 
+    getOrdersDetail(); */
     getNewOrdersList()
   }, [status, refresh])
 
