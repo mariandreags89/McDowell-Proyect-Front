@@ -15,7 +15,7 @@ function Menus() {
 
     useEffect(() => {
         const getProducts = async () => {
-            const response = await axios.get(`http://localhost:8080/api/products/all-products`);
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/products/all-products`);
             setProducts(response.data);
             
         }
