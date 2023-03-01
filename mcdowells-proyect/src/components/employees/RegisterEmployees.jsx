@@ -36,7 +36,7 @@ const RegisterEmployees = () => {
     return (<>
 
         <div className='containerLogReg'>
-        
+
             <div className="logITitleReg">
                 <p className='logInTextReg'>
                     REGISTRO EMPLEADOS
@@ -58,7 +58,11 @@ const RegisterEmployees = () => {
                         <option value="waiter">Camarero</option>
                     </select>
 
-                    <input className='logInBtn' type="submit" value="REGISTRAR" />
+                    <div> <input className='signInBtn' type="submit" value="REGISTRAR" />
+                        <input className='returnButton' value="VOLVER" onClick={() => navigate(-1)} />
+                    </div>
+
+
 
                 </form>
             </div>

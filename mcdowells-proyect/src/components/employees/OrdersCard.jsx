@@ -5,8 +5,8 @@ import { useUserContext } from '../../context/User';
 
 
 
-const OrdersCard = ({ ordersDetail, filtered , update }) => {
-  
+const OrdersCard = ({ ordersDetail, filtered, update }) => {
+
   const contexUser = useUserContext()
 
   let status = '';
@@ -19,7 +19,7 @@ const OrdersCard = ({ ordersDetail, filtered , update }) => {
         authorization: token
       }
     })
-   
+
 
     if (status !== 5) {
       await authAxios.patch(`http://localhost:3001/api/orders/status/${one}`)

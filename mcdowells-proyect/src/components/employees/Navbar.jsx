@@ -19,10 +19,10 @@ const Navbar = () => {
       <div className='leftNav'>
         <img className='logo-img' alt='NOT FOUND' src={logo} />
         <img className='emplImg' src='https://cdn-icons-png.flaticon.com/512/3899/3899618.png' alt='NOT FOUND' />
-        {contextUser.user.username}
+        {(contextUser.user.username).toUpperCase()}
       </div>
       <div className='rightNav' >
-        <img className='logOutImg' src='https://cdn-icons-png.flaticon.com/512/8771/8771121.png' alt='NOT FOUND'  />
+        <img className='logOutImg' src='https://cdn-icons-png.flaticon.com/512/8771/8771121.png' alt='NOT FOUND'  onClick={() => logOut()} />
         <label className='logOut' onClick={() => logOut()}>LOG OUT</label>
       </div>
     </div>
