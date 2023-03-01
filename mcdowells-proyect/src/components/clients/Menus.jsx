@@ -13,11 +13,9 @@ function Menus() {
     const [products, setProducts] = useState([]);
     const context = useCartContext();
 
-    // 
-
     useEffect(() => {
         const getProducts = async () => {
-            const response = await axios.get(`http://localhost:3001/api/products/all-products`);
+            const response = await axios.get(`http://localhost:8080/api/products/all-products`);
             setProducts(response.data);
             
         }

@@ -14,6 +14,15 @@ class OrdersManager {
     return (setNotCreated, setError, response)
   }
  
+
+  static async getOrdersDetail(id_status, setOrdersDetail){
+    const getOrdersDetail = async () => {
+      const response = await axios.get(`http://localhost:3001/api/orders/ordersDetail/${id_status}`);
+      setOrdersDetail(response.data);
+    }
+    getOrdersDetail();
+    return setOrdersDetail
+  }
 }
 
 export default OrdersManager;
