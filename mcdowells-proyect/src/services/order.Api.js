@@ -5,23 +5,50 @@ class OrdersManager {
     let response;
 
     try {
-      response=  await axios.post(`${process.env.REACT_APP_API_URL}/orders/create-order`, email);
-      await axios.post( `${process.env.REACT_APP_API_URL}/orders/create-product-order`, order );
+      response = await axios.post(
+        `${process.env.REACT_APP_API_URL}/orders/create-order`,
+        email
+      );
+      await axios.post(
+        `${process.env.REACT_APP_API_URL}/orders/create-product-order`,
+        order
+      );
     } catch (error) {
       setError(error.response.data.errorsMsg);
       setNotCreated(true);
     }
-    return (setNotCreated, setError, response)
+    return setNotCreated, setError, response;
   }
- 
 
-  static async getOrdersDetail(id_status, setOrdersDetail){
+  static getOrdersDetail(id_status, setOrdersDetail) {
     const getOrdersDetail = async () => {
-      const response = await axios.get(`${process.env.REACT_APP_API_URL}/orders/ordersDetail/${id_status}`);
+      const response = await axios.get(
+        `${process.env.REACT_APP_API_URL}/orders/ordersDetail/${id_status}`
+      );
       setOrdersDetail(response.data);
-    }
+    };
     getOrdersDetail();
-    return setOrdersDetail
+    return setOrdersDetail;
+  }
+
+  static patchOrderDetails(token, one) {
+    const nextStatus = async () => {
+      const authAxios = axios.create({
+        headers: { authorization: token },
+      });
+      await authAxios.patch(
+        `${process.env.REACT_APP_API_URL}/orders/status/${one}`
+      );
+    };
+    nextStatus();
+  }
+
+  static async getStatusOrders(setStatus, access) {
+    const response = await axios.get(
+      `${process.env.REACT_APP_API_URL}/status/${access}`
+    );
+    setStatus(response.data);
+    return setStatus;
   }
 }
 

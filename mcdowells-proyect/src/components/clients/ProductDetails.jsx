@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import axios from 'axios';
 import { useState } from 'react';
 import { useCartContext } from '../../context/ShoppingCartContext';
+import ProductsManager from '../../services/products.Api';
 
 
 function ProductDetails() {
@@ -17,11 +18,12 @@ function ProductDetails() {
 
 
     useEffect(() => {
-        const getProduct = async () => {
+        /*const getProduct = async () => {
             const response = await axios.get(`${process.env.REACT_APP_API_URL}/products/${id}`);
             setProduct(response.data);
         }
-        getProduct();
+        getProduct();*/
+        ProductsManager.getSingleProduct(setProduct, id)
     }, [])
 
     const addProduct = () => {
