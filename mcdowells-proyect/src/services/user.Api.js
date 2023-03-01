@@ -5,7 +5,7 @@ class UsersManager {
     let response;
     try {
       response = await axios.post(
-        "http://localhost:3001/api/users/signin",
+        `${process.env.REACT_APP_API_URL}/users/signin`,
         infoUser
       );
       setLoggedIn(true);
@@ -19,7 +19,7 @@ class UsersManager {
     let response;
     try {
       response = await axios.post(
-        "http://localhost:3001/api/users/register",
+        `${process.env.REACT_APP_API_URL}/users/register`,
         userInformation
       );
       setCreated(true);
@@ -34,7 +34,7 @@ class UsersManager {
     let response
     try {
       response = await axios.post(
-        "http://localhost:3001/api/users/register-employeers",
+        `${process.env.REACT_APP_API_URL}/users/register-employeers`,
         infoUser
       );
       setCreated(true);
