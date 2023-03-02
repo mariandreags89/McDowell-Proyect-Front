@@ -58,7 +58,7 @@ function EmployeeHome() {
                 </div>
             </div>
             
-            {notLoggedIn && <Modal title={"Ha habido un error"} text={"Usuario y/o contraseña no encontrado"} route={() => setNotLoggedIn(false)} />}
+            {notLoggedIn && <Modal title={"Ha habido un error"} text={"Usuario y/o contraseña no encontrado"} style={"btnModalEmployees"}  route={() => setNotLoggedIn(false)} />}
         </>
 
     )
